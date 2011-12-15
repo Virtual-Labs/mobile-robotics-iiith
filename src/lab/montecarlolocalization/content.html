@@ -1,0 +1,489 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.html">Mobile Robotics</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        Monte Carlo Localization
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+<p> <b>What is Localization?</b></p>
+<p>Localization is the problem of estimating a
+ robot's pose (it’s location on a map, and its heading). </p>
+<p>A robot cannot sense its own pose directly so it tries to 
+position itself relative to a map, using sensor readings.<p>
+
+<p>A probability distribution function is used to model
+ the uncertainty of the robots pose.</p>
+
+
+<p><b>Why use Probabilistic Methods?</b></p>
+<p>Suppose, that a robot is in a particular position. Also suppose, the localization method used tells us that it is in an altogether different location entirely (this is not such an outlandish claim as there is no deterministic algorithm to determine where the robot actually is. Localization is as such still an unsolved problem). Then, working with the false position of the robot to navigate it can lead to collision having potentially disasterous implications. </p>
+
+<p> Using a probabilistic method we never explicitly state that the robot is in a particular location. We only state that the <b>likelihood</b> of it being in a particular location is high. This does not rule out the possibility of it being in another location. Thus with more sensor updates we gain more information about the environment allowing us to strengthen or weaken the surety of our belief (as to where the robot is). Basically, by not commiting to any specific location we have more robust methods at our disposal to localize a robot.</p>
+
+<p>Also, the results obtained by probabilistic methods have been better than the ones obtained by deterministic methods. Leading, to a preference of the former over the latter in modern robotics research. </p>
+<br>
+
+
+<p>The higher the value of the pdf at a particular pose 
+in the distribution the larger the likelier it is that the robot is present there.
+The process of Localization involves estimating the posterior belief
+ of the robot based on some sensory information.</p>
+
+<p>EKF Localization uses a Gaussian Filter to estimate the robots pose.</p>
+ <p>In case of Gaussian filters like the Kalman and the EKF filter the belief is represented by a 
+ Gaussian probability density function. Since Gaussians are unimodal and possess a single maxima, they are useful
+ in modeling localization problems where the initial position for the robot is known. The mean is the most-likely
+ position of the robot and the area around it represents the measure of uncertainty.</p>
+
+<p>But in cases where a Gaussian is not a good representation of the belief 
+ (like the Global Localization Problem), we have to turn to other methods.</p>
+
+ <p>Enter the particle filter. </p>
+ <p><b> Why particle filters?</b></p>
+  
+ <p>Particle filters are used to approximate the posterior belief by a set of samples. Instead of representing 
+ the belief as an explicit function, the belief distribution is represented by a set of samples.</p>
+ 
+ <p>Thus the particle filter can be used to model distributions of any type.</p>
+ 
+ <p>With each particle is associated a weight. The weight of a particle is an indicator of its quality.
+ The weighted sum of the particles gives an estimate of the variable of interest.</p>
+ 
+ <p><b>Monte Carlo Localization </b></p>
+ 
+ <p> Monte Carlo Localization is the application of the particle filter algorithm to estimate a robot’s pose.
+The particles in this case, are an estimate of the pose of the robot. And the weights are a measure of the likelihood
+ of this estimate being the true robot pose.
+</p>
+
+ <p>Expected state of the robot is the expected value obtained from particles as <b>X=Σx<sub>i</sub>p<sub>i</sub></b> . Here <b>p(x<sub>i</sub>) = p<sub>i</sub></b> is the probability that the particle is in the state x<sub>i</sub>.</p>
+ 
+<p>Each particle represents a state x<sub>i</sub> and has associated with it the probability p<sub>i</sub> that it belongs to that state.</p>
+ <p>The state of the particle is updated every time the robot moves or senses.</p>
+ <p>The philosophy is that initially the particles are spread everywhere and with sensor updates and motion they converge to the actual position of the robot.</p>
+ 
+        </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;
+Robot motion is inherently noisy. If a robot is given a command to reach a particular goal
+ it will probably fall short or overshoot. This can be due to various reasons like the slipping of the 
+wheels or noise in the motor circuitry. So it makes sense to model this ambiguity in a robot’s 
+motion by using a motion model.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<b>The Motion Model: </b></p>
+
+ <p>The noise in the robot’s motion is modeled by a Gaussian pdf . The robot is more likely to be around the 
+desired location than any other location. The likelihood of finding the robot decreases as we move away from
+ the desired position. Thus, intuitively it makes sense to model the
+ velocity model noise using a Gaussian, with the maxima of the Gaussian centered at the desired location.</p>
+<br>
+ <b>The Algorithm</b>
+ <p>1. <b>&nbsp;&nbsp;&nbsp;&nbsp;
+  &#920;(new)=&#920;(old)+&#969;x&#916;t+N(0,σ(&#920;))</b></p>
+  <p> The robot first rotates to the desired heading. Some zero-mean Gaussian noise with a standard deviation of σ(&#920;) is thrown in.</p>
+ <p>2. &nbsp;&nbsp;&nbsp;&nbsp; <b>R(new)=R(old)+v x &#916;t + N(0,σ(r))</b></p>
+<p> Then the robot moves in the direction of the new heading. A noise of N(0,σ(r)) is added to the robot. </p>
+ <p>3.&nbsp;&nbsp;&nbsp;&nbsp; <b>X=R x cos(&#920;(new))</b></p>
+ <p>4.&nbsp;&nbsp;&nbsp;&nbsp; <b>Y=R x sin(&#920;(new))</b></p>
+ <p>In the model we assume the noise due to <b>(r)</b> and the noise due to <b>(&#920;)</b> are completely independent of each other. Thus the correlation between <b>(r)</b> and <b>(&#920;)</b> is zero and the covariance matrix is diagonal with <b>σ(r)</b> and <b>σ(&#920;)</b>.</p>
+ <p> The covariance matrix in x and y can be obtained by transforming the covariance matrix in <b>(r)</b> and <b>(&#920;)</b> via a Jacobian transform.</p>
+ <p>5.&nbsp;&nbsp;&nbsp;&nbsp; <b>  &#917(x,y)=J x &#917(r,&#920;) x J' </b></p>
+<p>J denotes the Jacobian. J' its transpose.</p>
+<p>&#917 the covariance matrix</p>
+ <p>6. The final orientation is sampled from a bivariate normal distribution with <b>N((X,Y),&#917(x,y))</b>.</p>
+ 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<b>The Sensor Model: </b></font></p>
+ <p>
+The sensor model used in the simulation adds to each reading a zero mean Gaussian noise with a variance which can be selected.
+Thus the result is that the robot receives a value that is centered around its exact reading but deviates as a Gaussian does.
+</p>
+  
+<p><b>&nbsp;&nbsp;&nbsp; The Particle Filter:</b></p>
+
+<p> The particle filter has been used for decades to approximate a posterior belief (a pdf) by a set of samples. </p>
+<p>The samples are called particles. </p>
+<p>Each particle is a set of 2 elements. One is an estimate of the variable of interest (in our case the robot’s pose). The other is the weight of the particle, which is an indicator of its quality. 
+As the particle filter is non-parametric (does not depend on an explicit function) it can be used to model pdf’s of all types. </p>
+<p>The larger the number of particles used the more accurate a representation it would be of the pdf. A Particle Filter with infinite particles amounts to the continuous probability function.</p>
+
+<p align="center"><img style="height:300px; width:300px;" src="images/gaussian.jpg" align="middle"></p>
+
+<p>The Gaussian in the figure is represented by a set of samples/particles (the arrows). You can see as the number of particles tends to infinity the entire Gaussian is represented. </p>
+
+<p><b>Monte Carlo Localization:</b></p>
+<p>Monte Carlo Localization applies the particle filter algorithm to solve the problem of the robot’s pose estimation. </p>
+
+<p><b>Monte Carlo Localization Algorithm:</b></p>
+
+<p>
+<b>1. Initialization:</b> We start off with an initial estimate of where the robot is. If the problem is Local then all the particles are initialized to that of the robot. If the problem is Global then the particles are spread all over the map. The weights of the particles initially are equal.
+</p>
+
+<p><b>2.</b>  We then move the robot so that it is in a position to gain new information.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;	In this step all the particles sample from a noisy velocity model</p>
+
+<p><b>3.</b> We gain the new information by sensing.</p>
+
+<p><b>4.</b> We look at all the particles and assign a weight to each of them based on how well the data they collected fits the data of the robot. </p>
+<p>
+The particles with readings similar to that of the robot are assigned higher weights than the other particles.</p>
+<p><b>5.</b> We resample particles from the higher weights discarding the particles with readings that deviate significantly from that of the robot. </p>
+
+<p><b>6.</b> We goto step 2</p>
+
+<p><b>Resampling</b><p>
+<p>The objective of resampling is to eliminate the particles that do not fit the robot’s data as they have a poor estimate of where the robot is. </p>
+<p>Resampling can be done in various ways. The method used in the applet is one where the particles are drawn proportional to their weight p(x<sub>i</sub>)=p<sub>i</sub>. </p>
+
+<p>Suppose we have 500 particles and we choose to resample them. 
+The particles with a higher weight get sampled from more often than a particle with a lower weight. </p>
+<br>
+
+<h4>The Resampling Algorithm:</h4>
+<p>The resampling for the j<sup>th</sup> particle is done as follows:</p>
+
+<ol>
+<li>Generate a random number r in [0,1]. </li>
+<li>Find by binary subdivision the smallest i for which <b>c<sub>i</sub>>=r</b>.</li>
+<p>Here each <b>c<sub>i</sub></b> represents the cumulative probability of <b>i<sup>th</sup></b> particle i.e.</p>
+	<p><b> c<sub>0</sub> = 0 ; &nbsp;&nbsp;&nbsp;&nbsp; c<sub>i</sub> = c<sub>i-1</sub> + p<sub>i</sub> </b></p>
+<li>Set the j<sup>th</sup> particle as the particle with state corresponding to the smallest <b>i</b> found from above</li>	
+	
+</ol>
+
+
+<p><b>&nbsp;&nbsp;&nbsp;&nbsp;An Illustration:</b></p>
+
+<p align="center"><img  style="height:300px; width:300px;" src="images/1.jpg"> </p>
+<p>Initially the pose of the robot is known .There is no ambiguity as to where the robot is.
+ All the particles are also in the same location as the robot. (In the figure they are under the robot and thus not visible.)</p>
+ 
+ 
+<p align="center"><img  style="height:400px; width:450px;" src="images/2.jpg"> </p>
+ <p>As we move the particles sample from a noisy motion model and start spreading. Thus the pose of the robot becomes more ambiguous.</p>
+
+<p align="center"><img  style="height:400px; width:450px;" src="images/3.jpg"> </p>
+ 
+ <p>The more we move without sensing the more the spread, because the initial belief we input into the motion model is itself incorrect. </p>
+ 
+<p align="center"><img  style="height:400px; width:450px;" src="images/4.jpg"></p>
+ 
+ <p>On sensing, a set of readings is obtained, and resampling is done eliminating the particles that have 
+ readings that deviate from those of the robot. These particles are usually the ones that are nowhere near the robot.</p>
+
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+
+	
+<p>The objective of this virtual lab is to simulate how a robot can localize 
+ itself using Monte-Carlo Localization. The noise in the velocity model is Gaussian.  Monte Carlo Localization uses
+ a sample-based representation (the particle filter) to approximate 
+ this Gaussian and estimate the pose of the robot.   </p>
+
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+        <center>
+<applet code="mij.class" archive="JavaApplication18.jar" width=820 height=550></applet></center>
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+          <p> 
+           Nothing Here.
+           </p>
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+            
+<p> <b>1.</b> What alternative resampling strategies can be used? </p><br>
+<p><b>2.</b> If we increase the number of sensors what 
+ changes would we notice when we press the sense button? </p><br>
+<p><b>3.</b> For a robot moving down a long symmetric corridor it is possible that a particle 
+ with a heading exactly opposite to that of the robot gets the same reading as the robot. What can we do then?</p><br>
+ <p><b>4.</b>What happens if there are no obstacles within sensing range?</p><br>
+ <p><b>5.</b> If the spread of the particles is mainly in the direction of the heading of the robot,
+ what can you infer about the velocity model?</p><br>
+ <p><b>6.</b> If the spread of the particles is mainly in the direction perpendicular to that of the robot,
+ what can you infer about the velocity model? </p><br>
+  <p><b>7.</b>Will the function work when the sensor noise is far greater than the motion noise?</p>
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+<br>
+<p><b>Information to use the Experiment:</b> </p>
+<ol>
+ <li> Choose whether you want to solve a Global Localization Problem or a Local one.</li>
+ <li> Select the standard deviations in the velocity models (sigmaR and sigmaTheta).</li>
+ <li> Select the sensor range (from the slider) and standard deviation for the sensor noise.</li>
+ <li> Select a map.</li>
+ <li> Click on the map to move your robot there. (See the particles spread).</li>
+ <li> Click Sense so that the robot carries out a sensory update and resamples from the particles. (The spread of the particles decreases).</li>
+ </ol>
+ <br>
+ <p>The range sensor returns the maximum range meausurable if no obstructions are detected, giving no additional information. 
+ Therefore moving closer to the wall, or increasing the sensor range yields more fruitful information giving a stronger set of samples.</p>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+            <ul>	
+            
+            <p><b>Books</b></p>
+              <li>
+				<b>Probabilistic Robotics</b> by&nbsp; Thrun Burgard Fox.
+              </li> 
+
+              <p><b>Papers</b></p>
+              <li>
+			Dellaert, F. ,Fox, D., Burgard, W., Thrun, S., <b>Monte Carlo Localization for Mobile Robots</b> ICRAI99</p>
+              </li>
+            </ul>
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+<footer id="lab-footer">
+ <p><center>Feedback: <a href="http://virtual-labs.ac.in/feedback/">http://virtual-labs.ac.in/feedback/</a></center></p>
+<p><center>Sponsored by MHRD: <a href="http://virtual-labs.ac.in/nmeict/" >http://virtual-labs.ac.in/nmeict/</a></center></p>
+<p><center>Licensing Terms: <a href="http://virtual-labs.ac.in/licensing/" >http://virtual-labs.ac.in/licensing/</a></center></p>
+  </footer>
+
+</div>		
+
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.html">Mobile Robotics</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        Sensor Modelling
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+          <div id="experiment-article-section-1-content" 
+          class="content">
+          <p> <font size="4"> <b>Why do Robots need Sensors?</b> </font></p>
+          
+          <p> As much as humans need sensors for making impressions of the world around, to navigate freely without colliding and sometimes even to localize ourselves with reference to the world around, robots need them for same reasons. Sensors enable robots to map the surroundings, to navigate without collisions and to localize themselves by recognizing presence of landmarks. Indeed sensing is a stepping stone to intelligence and
+autonomy and hence for any kind of autonomous or intelligent operations sensing and sensors are inevitable. </p>
+
+		<p><font size="4"> <b>What kinds of Sensors are available?</b> </font></p>
+		
+		<p><font size="4">Broadly sensors in robots are classified into two. They are </font></p>
+		
+<p> <b>Proprioceptive sensor:</b> Proprioceptive sensors perceive properties internal to the robot. Such sensors include battery capacity, wheel encoders, and position of arms and joints. </p>          
+
+<p><b>Exteroceptive sensors:</b> Exteroceptive sensors perceive elements of the external world such as light levels, sound, and distance to objects. Hence Exteroceptive
+sensor measurements are interpreted by the robot in order to extract meaningful environmental features. </p>		
+
+	<p>Some of the most common and popular sensors are:</p>
+	
+	<p>a) Infrared Sensors (Proximity sensors)</p>
+	
+	<p>b) Laser range finder (Range finders)</p>
+	
+	<p>c) Sonar Sensors (Range finders) </p>
+	
+	<p>d) Monocular Camera</p>
+	
+	<p>e) Binocular Cameras (Depth finders)</p>
+	
+	<p><b>Why do we need a Sensor Model?</b></p>
+	
+	<p>Sensors by nature are noisy in the sense the measurements obtained from them cannot be taken at face value. For
+		example when a range sensor measures the distance to an obstacle as say 1m it does not necessarily imply that the obstacle is 1m away from the
+		sensor. A more likely interpretation of this measurement is that the obstacle is more likely to be around 1m from the sensor than say at
+		0.5m or 1.5m away. Or the probability that the obstacle is 1m away is more likely than the probability that it is 0.5m away.</p>
+		
+		<p>Noises come due to various sources. In case of a monocular camera imaging a scene varying ambient
+illumination affects interpretation of the scene. If a pair of camera views are being used to detect depth then uncertainties in camera calibrations parameters such as its focal length can affect the depth being determined. </p>
+		
+		<p>In case of a range sensor such as a laser range finder, the uncertainty in the range is
+known to increase as the distance to the object increases. In case of a sonar uncertainty arises due to its beam width or the divergence angle
+and also as distance to measured objects increase.</p>
+		
+        </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+	
+		<p>
+		Consider a robot at a point with an obstacle at a distance of 5mts from robot along its path of sensing. Now let us
+		take the reading of the sensor sensing the obstacle. It gives us a value lesser or greater than the actual 5mts. This error in measurement
+        is denoted as noise and there are various modalities to model this error. In robotics probability theory has become a popular standpoint
+        of modelling sensor noise or noisy measurements of the sensor.
+        </p>
+        
+        <p>
+        In the above example, if we take multiple measurements on the same obstacle and tabulate these measurements we would observe a trend that
+		suggests most of the measurements cluttered around 0.2m, with say around 70% of the measurements lying between 4.8 and 5.2m. To model the
+		noise in such an instance through a Gaussian distribution is indeed tempting and reasonable. Hence the Gaussian function that we would
+		apply to this particular sensor&nbsp;would have 0.2mts as its variance. i.e. When the same sensor is used to take reading of an obstacle that
+		is not known to us, and if the reading of the sensor is 7mts then we model the measurement as a Gaussian whose mean is 7 and variance of
+		0.2. This would avoid an overconfident decision that the obstacle is precisely at 7m in front of the obstacle. Rather it suggests that the
+		most probable location of the obstacle is 7m away from the robot and that the probability tapers away as we move away from 7m on either
+		side. In other words the probability that the obstacle is 7m is more likely than the probability that it is at 6.5m or 7.5m.
+		</p>   
+		
+		<p>
+		Note that this modelling varies from sensor to sensor and depends on various factors. For example the pdf of the sonar sensors vary radially and also angularly, where as the laser range finders are linear along line of sensing.
+		</p>
+           
+        <p>Now let us discuss in detail about sensor models used in this Virtual Lab for Sonar and Laser/IR.</p>   
+
+		<p>
+		Consider a grid area of 500x500 pixels. Now the probability of occupancy in a cell/pixel denotes the likelihood of that cell/pixel being occupied by an 		   obstacle, which in essence models the noise of the sensor measurement through a discretization of its noise pdf. Let us consider the below map with obstacle   in white colour (Environmental view) and grid map (View perceived by robot) with all pixels initialized to 0.5 as probability of finding an obstacle in an
+ unknown area is half.
+		</p>
+		
+		<p align="center"><img src="vl_files/image01.jpg" style="height:350px; width:606px;" align="middle" /></p>
+
+		<p>Note: Figures below are of two kinds 1. Environmental view. 2. View perceived by robot (Green background).</p>		
+		
+		<p>
+			<b>Sonar Sensor:</b>
+	 		<b>Single sonar:</b>
+			<p>Sonar sensor unlike laser covers a cone area as given in the fig below.</p>
+			
+		 <p align="center"><img src="vl_files/image02.jpg" style="height:360px; width:200px;"> </p>
+		
+		<p>When the sensor starts scanning, each cell/pixel contained in this conical area is set to probability of occupancy accordingly as per sonar sensor characteristics. The cells/pixels near the robot are set to low values of Occupancy probability and when the radial distance increases, the probability value increases. The below figure will give an idea of how the probability value is described in the conical area from the region close to the robot to the region far away from the robot, when no obstacle is sensed. Note that the variance in the probability is dependent on the angular factor as well.</p>
+		
+		<p align="center"><img style="height:175px; width:175px;" src="vl_files/image03.jpg"></p>
+		
+		<p>When there is an obstacle in the conical area, then</p>
+		
+		<p align="center"><img src="vl_files/image04.jpg" style="height:133px; width:285px;"></p>
+		
+		<p>a. Minimum radial distance (Ra) at which the obstacle is encountered is given by the sonar sensor.</p>
+		
+		<p>b. The occupancy probability of each pixel/cell is updated in the following way after the obstacle is encountered. If the obstacle is found at a point as shown in the figure below, then blue area of the cone is where the probability of occupancy of pixels/cells are high and green area of the cone is where the probability of occupancy of pixels/cells are low. Further below we explain on how this computation is performed.</p>
+		
+		<p align="center"><img  src="vl_files/ObstacleFound.jpg" style="height:237px; width:489px;"> </p>
+		
+		<p>c. In figure below, for the area shown in blue, 2D Gaussian is computed whose mean is at the center of the Arc b, whose probability values progressively decreases as we move along the circumference of the Arc b away from its center as well as radically on either side towards Arcs a and c. Note that the radial distance between Arc a and Arc b, defines the variance of the probability along radial direction, <b>σ</b><sub><b>r</b></sub>.</p>
+		
+		<p align="center"><img src="vl_files/GaussinaUpdation.jpg" style="height:261px; width:574px;"></p>
+		
+		<p>The probability is computed discretely for all cells within the cone, essentially at the centre of each cell. In the Virtual Lab simulation applet the resolution of a cell is taken as one pixel and hence the probabilities are computed at each pixel.</p>
+		
+		<p><b>Equation:</b></p>
+		<ol>
+		<li>Probability of Occupancy of a pixel/cell in cone is given by the below equation with mean at the center of Arc b.</li>
+		<p align="center"><img src="vl_files/image06.jpg" style="height:59px; width:445px;"></p>
+			<ul>
+			<li>Note:a. r is the distance of the point from Arc b as shown in the above figure.</li> 
+			<li>b. <b>σ</b> is the radial variance of the Gaussian function</li>
+			<li>c. θ is the angle theta as shown in the above figure</li>
+			<li>d. <b>σ</b><sub>th</sub> is the angular variance of the Gaussian function</li>
+			<li>2. Probability of Non occupancy of a pixel/cell in cone is given by the Sigmoidal function as below and denoted in red color in the below figure.</li>
+			</ul>
+		<p align="center"><img src="vl_files/sigmoidal.jpg" style="height:65px; width:626px;"></p> 
+		
+		<p align="center"><img src="vl_files/sonarprob.jpg" style="height:300px; width:793px;"></p>
+		
+		<li> From the Robot to the Arc c, the resultant probability of occupancy of pixels is calculated by normalising Probability of Occupancy by Gaussian with the Probability of Non Occupancy by Sigmoid Function.</li>
+		
+		<p><b>Note:</b>
+In mapping algorithms the new probability value is calculated by multiplying the old value with that of the current probability value. For example if the probability value of a cell/pixel 300,100 is 0.2 in the first scan and when the same point is being scanned from another position of the robot which gives 0.3, then the new value of occupancy probability at 300,100 is 0.06. This is one of the reasons for having less values of probability than rounding them to zeroes so as to avoid multiplication with zeroes. The mapping algorithm will be discussed in a subsequent VL.</p>
+		
+		
+		<p><b>Sonar Array:</b></p>
+		
+		<p>Here the sonar array is considered as 3 single sonar sensors as shown in the figure. Probability of occupancy is calculated with same procedure as in the single sonar. Below are the figures that give you the environment of the robot (left) and its sensor model (right) with probability of occupancy represented with variance in colours (shades of green). This holds good till all 3 sensors are not overlapping. Overlapping scenario would be discussed&nbsp;in mapping algorithm of the subsequent VL.</p>		
+		<p align="center"><img src="vl_files/image07.jpg" style="height:133px; width:287px;"></p>
+		<br>
+		<b>Laser/IR:</b> 
+		<p><b>Single ray laser:</b> For a given an orientation, the sensor is capable of sensing the path along its orientation and gives the measurements. Laser ray covers a linear group of cells/pixels as shown in the below figure.</p>
+		
+		<p align="center"><img src="vl_files/image08.jpg" style="height:300px; width:300px;"></p>
+		
+		<ol>
+		<li>When there is no obstacle along the path of the single ray then the probability of occupancy of the cells/pixels along the path is set to 0 from its pervious value 0.5.</li>
+		
+		<p align="center"><img src="vl_files/image09.jpg" style="height:146px; width:331px;"></p>
+		
+		<li>
+		When there is an obstacle the sensor would be able to give the distance at which the obstacle is found. Sensor modelling is done with the help of Gaussian function that calculates the probability for a distance lesser and greater than the measured distance. Cells/Pixels along the path are updated accordingly as shown is the below figure.
+		</li>
+		
+		<p align="center"><img src="vl_files/image10.jpg" style="height:146px; width:324px;"></p>
+		
+		<li>
+		Note that using a single ray we can compute the occupancy probability of the cells/pixels from the robot till the obstacle (measured distance) as
+well as to a distance equal to variance of gaussian function farther away from obstacle. The pdf of this would be derived with the below equation along with the graph.
+		</li>
+		</ol>
+		<br>
+		<p><b>Equation:</b> </p>
+		
+		<ol>
+		<li>Probability of Occupancy of a point in the sensor ray where there is no obstacle is Zero.</li>
+		<li>Probability of Occupancy of a point in the sensor ray when there is an obstacle is given by:</li>
+		<p align="center"><img src="vl_files/image11.jpg" style="height:52px; width:405px;"></p>
+		<p align="center"><img src="vl_files/image12.jpg" style="height:236px; width:642px;"></p>
+		<p><b>Laser Array:</b> Laser array is nothing but set of readings taken by the single ray laser for theta varying from 0 to 180. The same procedure as in singleray laser is followed here. Below are the figures that gives you the environment of the robot and its perception.</p>
+		<p align="center"><img src="vl_files/image13.jpg" style="height:222px; width:470px;"></p>
+		<p>IR sensor has been modelled similar to that of laser with less range and angle of array limited to 30 degrees.</p>
+
+		</ol>
+        </div>
+      </section>
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+        
+		<p>The objective of the virtual lab is to define sensor model based on probabilistic theory for common/popular sensors such as the sonar/laser range finer/IR sensor. The lab depicts how to model a pdf over noisy range/depth measurements returned by the sensors and also how to graphically depict such representation. The lab also shows through graphical illustration as to how the pdf varies as the parameters that constitute the pdf vary such as the sensor range/beam width/divergence and the mean variance associated with these.</p>       
+		
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+        <center>
+		 <applet codebase="classes" code="VirtualLab.class" height="700" width="900"></applet>
+		 </center>
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+		<p>Nothing Here</p>
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+            
+		<ol>
+		
+		<li>Although only a part of the diverging beam from the sonar may detect an obstacle, why do we update probabilities along the entire cone?</li>
+		<li>Mention at-least two reasons for why a probabilistic modelling of sensor noise could be considered as a reasonably sound process?</li>
+		<li>What are the random variables for which we are constructing the probability density function in this virtual lab?</li>
+		<li>Among the two sensor models discussed in this lab, which do you think is more accurate and why? </li>
+		<li>Write a simple MATLAB code to simulate the occupancy probability of an object detected by the sonar, whose model is discussed in the theory page? Does your
+			simulation corroborate with the kind of occupancy maps created in the Virtual Lab applet? </li>
+		<li>Why do you feel is the reason for having non-zero non occupancy for cells lying in the sonar cone despite the sonar not detecting any obstacle? Why is the same policy not adopted for lasers?</li>
+
+		</ol>
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+      <div id="experiment-article-section-7-heading" class="heading">
+       Procedure
+	  </div>
+	
+      <div id="experiment-article-section-7-content" class="content">
+		<ol>
+			<li>To depict different environments, there are 3 maps provided here. </li>
+			<li>To study different sensor characteristics, option to select different type of sensors are provided.</li>
+			<li>Error variance that changes the window of the probability density function, is provided in a slider. It is used to adjust the
+uncertainty in measurements of the given sensor to the user requirements. </li>
+			<li> Range varies the distance seen by sensor.</li>
+			<li> Divergence varies the angular coverage of the sensors</li>
+			<li> Two tabs are provided namely "Click to set the robot position" and "Check what robot understands!" for distinguishing the environmental view and
+robots perception respectively.</li>
+			<li>Application is designed in a way that you can set the robots position by clicking the mouse in a position you wanted, scroll to change the orientation of the robot. </li>
+			<li>To start the robot to sense its surroundings, click on the "Activate Robot" button. </li>
+			<li>To scan the surroundings with array of sensors, click on "Use Sensor Array". </li>
+			<li>To check how a sensor measurements are perceived by the robot, click on the tab "Check what the robot understands!". </li>
+       </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+
+
+		<p>There are many models already developed and in use. These theories are explained in "Probabilistic Robotics by Thrun Burgard Fox". The gist of which is put in the ppt which is available <u><span style="color: blue;"><a href="sensor-models.ppt" style="color: blue;">here</a></p>
+
+            <ul>	
+			<p><b>Books</b></p>
+			<li>
+			Probabilistic Robotics by&nbsp; Thrun Burgard Fox.
+			</li>
+
+            
+            <li>
+            Adams, M.D., Sensor Modelling, Design and Data Processing for Autonomous Navigation. World Scientific Series in Robotics and Intelligent Systems. Singapore, World Scientific Publishing Co. Ltd., 1999.
+            </li>
+            
+            
+            <li>
+            Breipohl,A.M., Probabilistic Systems Analysis: An Introduction to Probabilistic Models, Decisions, and Applications of Random Processes. New York, John Wiley
+Sons, 1970.
+            </li>
+            
+            <li>
+            Everett, H.R., Sensors for Mobile Robots, Theory and Applications. New York, Natick,&nbsp;&nbsp; MA, A.K. Peters, Ltd., 1995.
+            </li>
+            
+            
+            <li>
+            Lee,D., The Map-Building and Exploration Strategies of a Simple Sonar-Equipped Mobile Robot. Cambridge, UK, Cambridge University Press, 1996. 
+            </li>
+        
+        	<br>
+            
+            <p><b>Papers</b></p>
+              <li>
+Burgard, W., Fox, D., Jans, H., Matenar, C., Thrun, S., "Sonar-Based Mapping of Large-Scale Mobile Robot Environments using EM," in Proceedings of the International
+Conference on Machine Learning, Bled, Slovenia, 1999.
+              </li>
+              <li>
+              Elfes, A., "Sonar-Based Real World Mapping and Navigation," 
+              </li> 
+              <li>
+                Lazanas,A. Latombe, J.C., "Motion Planning with Uncertainty: A Landmark Approach." Artificial Intelligence, 76:285-317, 1995.
+              </li> 
+              <li>
+                Lumelsky, V., Skewis, T., "Incorporating Range Sensing in the Robot Navigation Function." IEEE Transactions on Systems, Man, and Cybernetics, 20:1990, pp. 1058-1068. 
+              </li>
+            </ul>
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+	<p><center>Feedback:<a href="http://virtual-labs.ac.in/feedback/">http://virtual-labs.ac.in/feedback/</a></center></p>
+	<p><center>Sponsored by MHRD: <a href="http://virtual-labs.ac.in/nmeict/" >http://virtual-labs.ac.in/nmeict/</a></center></p>
+	<p><center>Licensing Terms: <a href="http://virtual-labs.ac.in/licensing/" >http://virtual-labs.ac.in/licensing/</a></center></p>
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+<footer id="lab-footer">
+	<p><center>Feedback: <a href="http://virtual-labs.ac.in/feedback/">http://virtual-labs.ac.in/feedback/</a></center></p>
+	<p><center>Sponsored by MHRD: <a href="http://virtual-labs.ac.in/nmeict/" >http://virtual-labs.ac.in/nmeict/</a></center></p>
+	<p><center>Licensing Terms: <a href="http://virtual-labs.ac.in/licensing/" >http://virtual-labs.ac.in/licensing/</a></center></p>
+</footer>
+
+</div>		
+
+</body>
+</html>
