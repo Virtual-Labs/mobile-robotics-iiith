@@ -146,20 +146,20 @@ edit -->
 	<br>
 	<p> Let it's rotational velocity be given by the variable ω. Let it's transloational velocity be given by the variable V. We add a Gaussian noise N(0,σ<sub>v</sub>). Where σ<sub>v</sub> is the standard deviation int the velocity. Similarly to  ω we add N(0,σ<sub>ω</sub>). </p>
 	<p> The resulting set of equations are:</p>
-	<ol>
+	<ol style="padding:30px;">
 		<li><b>V' = V + N(0,σ<sub>v</sub>)</b></li>
 		<li><b>ω' =  ω + N(0,σ<sub>ω</sub>)</b></li>
 	</ol>
 	
 	Thus the noise free or predicted (predicted in the sense that without any information on the noise we would predict the robot's pose from the equations given below) position of the robot is given by the equations:</p>
-	<ol>
+	<ol style="padding:30px;">
 		<li><b>X' = X + V x dT x cos(θ + ω x dT)</b></li>
 		<li><b>Y' = Y + V x dT x sin(θ + ω x dT)</b></li>
 		<li><b>θ' = θ + ω x dT</b></li>
 	</ol>
 	<br>
 	<p>On the other hand the actual equations (with noise) are given by: </p>
-	<ol>
+	<ol style="padding:30px;">
 	<li><b>X<sub>n</sub>' = X<sub>n</sub> + V' x dT x cos(θ<sub>n</sub>+ω' x dT)</b></li>
 	<li><b>Y<sub>n</sub>' = Y<sub>n</sub> + V x dT x sin(θ<sub>n</sub>+ω' x dT)</b></li>
 	<li><b>θ<sub>n</sub>' = θ<sub>n</sub> + ω' x dT</b></li>
@@ -242,79 +242,9 @@ edit -->
         <div id="experiment-article-section-3-content" class="content">
 <p>The objective of this virtual lab is to show how noise can affect a robot's motion, trajectory and certainity of pose. Different parameters can be adjusted and its effect observed in the simulation. </p>
         </div>
-
       </section>
-
-
-      <section id="experiment-article-section-4">
-
-        <div id="experiment-article-section-4-icon" 
-        class="icon">
-	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/simulation.jpg" />
-	</div>
-
-        <div id="experiment-article-section-4-heading" 
-        class="heading">
-          Experiment
-        </div>
-
-        <div id="experiment-article-section-4-content" 
-        class="content">
-          <p><center>
-  <applet code="initMain2.class" archive="VelocityModels.jar,lib/Jama-1.0.2.jar" height="620" width="1000"></applet>
-            </center>
-          </p>
-        </div>
-
-      </section>
-
-      <section id="experiment-article-section-5">
-   
-        <div id="experiment-article-section-5-icon" 
-        class="icon">
-	  <!-- Enclose the icon image of your lab.-->
-	  <img src="../images/manual.jpg" />
-	</div>
-
-        <div id="experiment-article-section-5-heading" 
-        class="heading">
-          Manual
-        </div>
-
-        <div id="experiment-article-section-5-content" 
-        class="content">
-			<p>Nothing Here.</p>
-          </div>
-
-        </section>
-
-        <section id="experiment-article-section-6">
       
-          <div id="experiment-article-section-6-icon" 
-          class="icon">
-	    <!-- Enclose the icon image of your lab.-->
-	    <img src="../images/quizzes.jpg" />
-	  </div>
-
-          <div id="experiment-article-section-6-heading" 
-          class="heading">
-            Quizzes
-          </div>
-
-          <div id="experiment-article-section-6-content" 
-          class="content">
-			<ol>
-			<li>Does the initial position of the robot affect the result of the experiment?</li><br>
-			<li>Since time is a parameter in the experiment and also a variable in the equations, why don't we add noise?</li><br>
-			<li>Ultimately, we are trying to predict the pose of the robot, so why do we add noise to the velocity and not the pose?</li><br>
-			<li>What percentage of the time should the estimate(red dot) be in the ellipse?</li><br>
-			<li>If the estimate(red dot) leaves the ellipse will it tend to come back into the ellipse or go farther away? how do you interpret this?</li><br>
-			</ol>            
-		
-          </div>
-
-        </section>
+      
 
         <section id="experiment-article-section-7">
 	  
@@ -341,7 +271,7 @@ edit -->
  <p><b>5.</b> Try out some new parameters</p>
  
  <h4>Units</h4>
- <ul>
+ <ul style="padding:30px;">
  <li>The linear velocity is in metres/second. </li>
 <li> The angular velocity is in radians/second.</li>
  </ul>
@@ -357,7 +287,90 @@ edit -->
 	  </div>
 	
         </section>
-			
+			      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+          <p><center>
+  <applet code="initMain2.class" archive="VelocityModels.jar,lib/Jama-1.0.2.jar" height="620" width="1000"></applet>
+            </center>
+          </p>
+        </div>
+
+      </section>
+
+<!--      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+			<p>Nothing Here.</p>
+          </div>
+
+        </section>-->
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+			<ol style="padding:30px;">
+			<li>Does the initial position of the robot affect the result of the experiment?</li><br>
+			<li>Since time is a parameter in the experiment and also a variable in the equations, why don't we add noise?</li><br>
+			<li>Ultimately, we are trying to predict the pose of the robot, so why do we add noise to the velocity and not the pose?</li><br>
+			<li>What percentage of the time should the estimate(red dot) be in the ellipse?</li><br>
+			<li>If the estimate(red dot) leaves the ellipse will it tend to come back into the ellipse or go farther away? how do you interpret this?</li><br>
+			</ol>            
+		
+          </div>
+
+        </section>
+
+
 		
         <section id="experiment-article-section-8">
    
@@ -374,7 +387,7 @@ edit -->
 
           <div id="experiment-article-section-8-content" 
           class="content" style="margin-left:40px;" >
-            <ul>	
+            <ul style="padding:30px;">	
               <li>
 			  <b>Probabilistic Robotics</b> by&nbsp; Thrun Burgard Fox.
               </li>

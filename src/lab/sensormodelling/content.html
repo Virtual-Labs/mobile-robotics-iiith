@@ -218,7 +218,7 @@ and also as distance to measured objects increase.</p>
 		<p>The probability is computed discretely for all cells within the cone, essentially at the centre of each cell. In the Virtual Lab simulation applet the resolution of a cell is taken as one pixel and hence the probabilities are computed at each pixel.</p>
 		
 		<p><b>Equation:</b></p>
-		<ol>
+		<ol style="padding:30px;">
 		<li>Probability of Occupancy of a pixel/cell in cone is given by the below equation with mean at the center of Arc b.</li>
 		<p align="center"><img src="vl_files/image06.jpg" style="height:59px; width:445px;"></p>
 			<ul>
@@ -267,7 +267,7 @@ well as to a distance equal to variance of gaussian function farther away from o
 		<br>
 		<p><b>Equation:</b> </p>
 		
-		<ol>
+		<ol style="padding:30px;">
 		<li>Probability of Occupancy of a point in the sensor ray where there is no obstacle is Zero.</li>
 		<li>Probability of Occupancy of a point in the sensor ray when there is an obstacle is given by:</li>
 		<p align="center"><img src="vl_files/image11.jpg" style="height:52px; width:405px;"></p>
@@ -301,6 +301,39 @@ well as to a distance equal to variance of gaussian function farther away from o
         </div>
 
       </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+      <div id="experiment-article-section-7-heading" class="heading">
+       Procedure
+	  </div>
+	
+      <div id="experiment-article-section-7-content" class="content">
+		<ol style="padding:30px;">
+			<li>To depict different environments, there are 3 maps provided here. </li>
+			<li>To study different sensor characteristics, option to select different type of sensors are provided.</li>
+			<li>Error variance that changes the window of the probability density function, is provided in a slider. It is used to adjust the
+uncertainty in measurements of the given sensor to the user requirements. </li>
+			<li> Range varies the distance seen by sensor.</li>
+			<li> Divergence varies the angular coverage of the sensors</li>
+			<li> Two tabs are provided namely "Click to set the robot position" and "Check what robot understands!" for distinguishing the environmental view and
+robots perception respectively.</li>
+			<li>Application is designed in a way that you can set the robots position by clicking the mouse in a position you wanted, scroll to change the orientation of the robot. </li>
+			<li>To start the robot to sense its surroundings, click on the "Activate Robot" button. </li>
+			<li>To scan the surroundings with array of sensors, click on "Use Sensor Array". </li>
+			<li>To check how a sensor measurements are perceived by the robot, click on the tab "Check what the robot understands!". </li>
+			
+			</ol>
+       </div>
+	
+        </section>
+
+
 
 
       <section id="experiment-article-section-4">
@@ -361,7 +394,7 @@ well as to a distance equal to variance of gaussian function farther away from o
           <div id="experiment-article-section-6-content" 
           class="content">
             
-		<ol>
+		<ol style="padding:30px;">
 		
 		<li>Although only a part of the diverging beam from the sonar may detect an obstacle, why do we update probabilities along the entire cone?</li>
 		<li>Mention at-least two reasons for why a probabilistic modelling of sensor noise could be considered as a reasonably sound process?</li>
@@ -376,34 +409,6 @@ well as to a distance equal to variance of gaussian function farther away from o
 
         </section>
 
-        <section id="experiment-article-section-7">
-	  
-          <div id="experiment-article-section-7-icon" class="icon">
-	    <!-- Enclose the icon image of your lab. -->
-	    <img src="../images/procedure.jpg" />
-	  </div>
-	
-      <div id="experiment-article-section-7-heading" class="heading">
-       Procedure
-	  </div>
-	
-      <div id="experiment-article-section-7-content" class="content">
-		<ol>
-			<li>To depict different environments, there are 3 maps provided here. </li>
-			<li>To study different sensor characteristics, option to select different type of sensors are provided.</li>
-			<li>Error variance that changes the window of the probability density function, is provided in a slider. It is used to adjust the
-uncertainty in measurements of the given sensor to the user requirements. </li>
-			<li> Range varies the distance seen by sensor.</li>
-			<li> Divergence varies the angular coverage of the sensors</li>
-			<li> Two tabs are provided namely "Click to set the robot position" and "Check what robot understands!" for distinguishing the environmental view and
-robots perception respectively.</li>
-			<li>Application is designed in a way that you can set the robots position by clicking the mouse in a position you wanted, scroll to change the orientation of the robot. </li>
-			<li>To start the robot to sense its surroundings, click on the "Activate Robot" button. </li>
-			<li>To scan the surroundings with array of sensors, click on "Use Sensor Array". </li>
-			<li>To check how a sensor measurements are perceived by the robot, click on the tab "Check what the robot understands!". </li>
-       </div>
-	
-        </section>
 			
 		
         <section id="experiment-article-section-8">
@@ -425,7 +430,7 @@ robots perception respectively.</li>
 
 		<p>There are many models already developed and in use. These theories are explained in "Probabilistic Robotics by Thrun Burgard Fox". The gist of which is put in the ppt which is available <u><span style="color: blue;"><a href="sensor-models.ppt" style="color: blue;">here</a></p>
 
-            <ul>	
+            <ul style="padding:30px;">	
 			<p><b>Books</b></p>
 			<li>
 			Probabilistic Robotics by&nbsp; Thrun Burgard Fox.
@@ -454,7 +459,7 @@ Sons, 1970.
         	<br>
             
             <p><b>Papers</b></p>
-              <li>
+              <li style="padding:30px;">
 Burgard, W., Fox, D., Jans, H., Matenar, C., Thrun, S., "Sonar-Based Mapping of Large-Scale Mobile Robot Environments using EM," in Proceedings of the International
 Conference on Machine Learning, Bled, Slovenia, 1999.
               </li>
@@ -487,9 +492,7 @@ Conference on Machine Learning, Bled, Slovenia, 1999.
     <!-- Article footer can display related content and 
     additional links -->						
     <footer id="lab-article-footer" class="default">
-	<p><center>Feedback:<a href="http://virtual-labs.ac.in/feedback/">http://virtual-labs.ac.in/feedback/</a></center></p>
-	<p><center>Sponsored by MHRD: <a href="http://virtual-labs.ac.in/nmeict/" >http://virtual-labs.ac.in/nmeict/</a></center></p>
-	<p><center>Licensing Terms: <a href="http://virtual-labs.ac.in/licensing/" >http://virtual-labs.ac.in/licensing/</a></center></p>
+
     </footer>
 
   </article>
