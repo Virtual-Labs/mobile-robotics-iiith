@@ -254,7 +254,7 @@ The particles with a higher weight get sampled from more often than a particle w
 <h4>The Resampling Algorithm:</h4>
 <p>The resampling for the j<sup>th</sup> particle is done as follows:</p>
 
-<ol>
+<ol style="padding:30px;">
 <li>Generate a random number r in [0,1]. </li>
 <li>Find by binary subdivision the smallest i for which <b>c<sub>i</sub>>=r</b>.</li>
 <p>Here each <b>c<sub>i</sub></b> represents the cumulative probability of <b>i<sup>th</sup></b> particle i.e.</p>
@@ -314,6 +314,40 @@ The particles with a higher weight get sampled from more often than a particle w
       </section>
 
 
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+<br>
+<p><b>Information to use the Experiment:</b> </p>
+<ol style="padding:30px;">
+ <li> Choose whether you want to solve a Global Localization Problem or a Local one.</li>
+ <li> Select the standard deviations in the velocity models (sigmaR and sigmaTheta).</li>
+ <li> Select the sensor range (from the slider) and standard deviation for the sensor noise.</li>
+ <li> Select a map.</li>
+ <li> Click on the map to move your robot there. (See the particles spread).</li>
+ <li> Click Sense so that the robot carries out a sensory update and resamples from the particles. (The spread of the particles decreases).</li>
+ </ol>
+ <br>
+ <p>The range sensor returns the maximum range meausurable if no obstructions are detected, giving no additional information. 
+ Therefore moving closer to the wall, or increasing the sensor range yields more fruitful information giving a stronger set of samples.</p>
+	  </div>
+	
+        </section>
+			
+
       <section id="experiment-article-section-4">
 
         <div id="experiment-article-section-4-icon" 
@@ -335,11 +369,11 @@ The particles with a higher weight get sampled from more often than a particle w
 
       </section>
 
-      <section id="experiment-article-section-5">
+<!--      <section id="experiment-article-section-5">
    
         <div id="experiment-article-section-5-icon" 
         class="icon">
-	  <!-- Enclose the icon image of your lab.-->
+
 	  <img src="../images/manual.jpg" />
 	</div>
 
@@ -356,7 +390,7 @@ The particles with a higher weight get sampled from more often than a particle w
 
           </div>
 
-        </section>
+        </section>-->
 
         <section id="experiment-article-section-6">
       
@@ -372,7 +406,7 @@ The particles with a higher weight get sampled from more often than a particle w
           </div>
 
           <div id="experiment-article-section-6-content" 
-          class="content">
+          class="content" style="padding:30px;">
             
 <p> <b>1.</b> What alternative resampling strategies can be used? </p><br>
 <p><b>2.</b> If we increase the number of sensors what 
@@ -390,38 +424,6 @@ The particles with a higher weight get sampled from more often than a particle w
 
         </section>
 
-        <section id="experiment-article-section-7">
-	  
-          <div id="experiment-article-section-7-icon" 
-          class="icon">
-	    <!-- Enclose the icon image of your lab. -->
-	    <img src="../images/procedure.jpg" />
-	  </div>
-	
-          <div id="experiment-article-section-7-heading" 
-          class="heading">
-	    Procedure
-	  </div>
-	
-          <div id="experiment-article-section-7-content" 
-          class="content">
-<br>
-<p><b>Information to use the Experiment:</b> </p>
-<ol>
- <li> Choose whether you want to solve a Global Localization Problem or a Local one.</li>
- <li> Select the standard deviations in the velocity models (sigmaR and sigmaTheta).</li>
- <li> Select the sensor range (from the slider) and standard deviation for the sensor noise.</li>
- <li> Select a map.</li>
- <li> Click on the map to move your robot there. (See the particles spread).</li>
- <li> Click Sense so that the robot carries out a sensory update and resamples from the particles. (The spread of the particles decreases).</li>
- </ol>
- <br>
- <p>The range sensor returns the maximum range meausurable if no obstructions are detected, giving no additional information. 
- Therefore moving closer to the wall, or increasing the sensor range yields more fruitful information giving a stronger set of samples.</p>
-	  </div>
-	
-        </section>
-			
 		
         <section id="experiment-article-section-8">
    
@@ -438,7 +440,7 @@ The particles with a higher weight get sampled from more often than a particle w
 
           <div id="experiment-article-section-8-content" 
           class="content">
-            <ul>	
+            <ul style="padding:30px;">	
             
             <p><b>Books</b></p>
               <li>
