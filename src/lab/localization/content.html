@@ -1,0 +1,390 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.html">Mobile Robotics</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        Localization
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+
+
+<p>Localization has proven to be the most critical aspect of mobile robot navigation. Generally indoor localization is achieved with the aid of maps over and above dead reckoning. Indeed a mobile robot localizing purely based on its odometry gets lost very soon due to the diverging nature of such errors, rendering it useless for any application or task. Hence indoor robots need external navigational aids or references to correct such errors, which has been the key challenge of any localization task.
+</p>
+
+<p>Localization methods that involve the use of an a-priori known map are traditionally classified in two paradigms; global and local localization . </p>
+
+
+<p>
+<b>Global localization </b> is the problem of estimating the state (pose) of the robot in a known map without an initial estimate of its state. The challenge is that in the absence of an initial guess the problem cannot be modelled with unimodal probability distribution leading to a search over all possible poses or states of the robot. The search is inevitably exponential in state dimensions
+</p>
+
+<p>
+<b>Local localization</b> is the problem of estimating the robot's state in a given map. State here could be either location of the robot represented as (x,y) coordinates in a reference frame or it could denote a configuration of the robot represented by its location and orientation i.e., (x,y,theta). The map could be a map of line segments or a map of grids. For example in the figure below a grid map is represented with obstacles are shown in red, the non-obstacle areas in blue. The robot is shown in white and virtual robot is shown in green. The map and the robot are represented in the same reference frame. Let the origin of the reference frame be the top left corner of the map(0,0)(fig.1) , then a location on the obstacle indicated by the arrow has its coordinates as (369,165) and the robot's location in the same map (fig.2) is (309,309).
+</p>
+
+<p>The problem of global localization is for the robot to determine its location in the map, i.e., it has to possess an algorithm that can output the robot's location as (309,309) in the map. Note that the robot is actually unaware of its location but is in possession of the map.
+</p>
+
+
+
+<p align="center"><img style="width:410px; height:470px;" src="a.jpg"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="d.jpg" style="width:510px; height:470px;">
+</p>
+
+
+<p>Fig.1 is showing the origin of the reference frame as (0,0) at the top left of the map (black dot) and denote the location of the robot as () in (white dot).</p>
+
+<br>
+
+<p>An analogy can be drawn of a man with a city map trying to find a particular place in an unknown city. In order to use the city map, the man must first determine his position within the city. For example, it is sufficient even if he can locate in the street in which he currently is, in the city map. To do so, he can look around and compare his observations with the information represented in the map. Here, such an observation can be for example a road sign, a junction, a sign board or a landmark. This is global localization. </p>
+      </div>
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+       	
+       	<p>We develop a method of reprojection to achieve the objective set out for a fast global localization algorithm. The links to the presentation that delineates the algorithm is given in the links below</p>
+       	<p><a href="TheoryToLab.ppt" style="color:blue">URL FOR THEORY PPT</a></p>
+       	
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+          <p>The objective of this lab is to develop a fast global localization algorithm that avoids searching in the space of all possible locations or configurations of the robot and as faithfully reproduce localization results comparable to other global localization methods such as Markov and Particle Filter methods. See virtual labs on Markov and Particle Filter based localization methods.</p>
+
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+          <p>
+<center>  <applet codebase="classes1" code="algo3.class" width=1800 height=2000></applet></center>
+	        
+            
+          </p>
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+   			<p>Nothing Here.
+   			</p>
+   
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+			<ol style="padding:10px;">
+<li>Why do you think that the method of Fast Localization by Reprojection of sensor readings is faster than the popular probabilistic methods in literature?</li><br>
+
+<li>Do you think this method will be faster even if the number of boundary cells is more than the number of free cells? (You may want to check the proof presented in "Global Localization of Mobile Robots by Reverse Projection of Sensor Readings", presented at IEEE International Conference on Robotics and Bio-mimetics, 2008)</li><br>
+
+<li>When do you think this method will be unequivocally faster than the other approaches presented in this Virtual Lab on Mobile Robotics </li><br>
+		<ul>
+<li>For the first sensor update where the initial position of the robot is unknown and all cells have equally likely possibility of the robot being present  there?</li><br>
+
+<li>For the subsequent sensor updates when there is an initial guess of the robot's position or in other words where some cells are more likely to have the robot than other cells.</li><br>
+		</ul>
+		
+<li>How does the cell resolution affect the accuracy of the results? Do you think the current method will be less adversely or more adversely affected by cell resolution when compared with other localization methods presented in the Virtual Labs. Explain?</li>
+
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+	    <p>
+		<a href="http://www.youtube.com/watch?v=phVI1EcgNF8&feature=youtu.be">Click on the link for the procedure</a>
+	    </p>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+            <ul>	
+            
+            <li>
+            D. Fox, W. Burgard, and S. Thrun, “Active markov localization for mobile robots”, Robotics and Autonomous Systems., 25, 195-207, 1998.
+            </li>
+                        <br>
+            
+            <li>Frank Dellaert, Dieter Fox, Wolfram Burgard, and Sebastian Thrun, ”Monte-Carlo Localization for Mobile Robots,” IEEE International Conference on Robotics and Automation (ICRA99), May, 1999.</li>
+            
+                        <br>
+            
+            <li>F Lu and E Milios, “Robot pose estimation in planar environments by matching range scans”, Journal of Intelligent and Robotic Systems, 1997. </li>
+            
+            <br>
+            
+            <li>
+            J J Leonard and H F Durrant-Whyte, “Directed Sonar Sensing for Mobile Robot Navigation”, PhD thesis, University of Oxford, 1992.
+            </li>
+                        <br>
+            <br>            
+            
+            	<li>
+            	Konolige, K. and K. Chou, “Markov Localization by Correlation”, Proc of IJCAI, 1999.
+            	</li>
+            <br>            	
+            
+              <li>
+                R. Simmons and S. Koenig. “Probabilistic robot navigation in partially observable
+        environments”, In Proc. of the International Joint Conference on Artificial
+        Intelligence (IJCAI), 1995.
+              </li>
+              
+                          <br>
+              <li>
+                L. Guibas, R.Motwani, and P. Raghavan, The robot localization problem, SIAM
+        J. Computing 26 (1997), no. 4, 1120.1138.
+              </li> 
+              
+            <br>              
+              
+              <li>
+                M Rao, G Dudek, and S. Whitesides,”Minimum Distance Localization for a
+        Robot with Limited Visibility”, Proc of ICRA, 2005.
+              </li> 
+
+            <br>
+              
+              <li>
+                D Fox, “Adapting the Sample Size in Particle Filters Through KLD-Sampling”,
+        Intl. Journal of Robotics Research, 22, 2003.
+              </li>
+
+
+            </ul>
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+<footer id="lab-footer">
+   <p><center>Feedback: <a href="http://virtual-labs.ac.in/feedback/">http://virtual-labs.ac.in/feedback/</a></center></p>
+<p><center>Sponsored by MHRD: <a href="http://virtual-labs.ac.in/nmeict/" >http://virtual-labs.ac.in/nmeict/</a></center></p>
+<p><center>Licensing Terms: <a href="http://virtual-labs.ac.in/licensing/" >http://virtual-labs.ac.in/licensing/</a></center></p>
+
+  </footer>
+
+</div>		
+
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.html">Mobile Robotics</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        RRT-based Path Planning
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+          <p> <font size="4"> <b>Why there is a need for motion planning in robotics?</b> </font></p>
+          <p>Motion planning is essential in robotics because a mere geometrically feasible path may not satisfy all the constraints imposed by the system. In motion planning we try to find feasible trajectories that satisfy constraints which maybe either local or global.<br></p>  
+          
+          <p>Take the below example<br></p>
+          <p align="center"><img style=" width: 926px; height: 260px;" alt="" src="./images/compare.jpg"></p>
+          <p align="center">Fig-1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fig-2 </p>
+     	  
+     	  <p>&nbsp;&nbsp; The first figure gives us a geometrically feasible path but the kinematics of the vehicle will not allow for the vehicle to move in that path. In contrast the second figure gives a path satisfying constraints imposed by the system.<br></p>
+     	    
+     	  <p><b>What are the different types of planners?</b></p>
+     	  
+     	  <p>There are broadly three types of constraints:</p>
+           <ul>
+              	<li> Geometric </li>
+               	<li> Kinematic</li>
+               	<li> Dynamic</li>
+            <br>
+           </ul>
+              <p><b>Geometric:</b> Gives only the collision-free path and does not check the kinematic-feasibility of the path.</p>
+              <p><b>Kinematic: </b>This gives both a collision-free and kinematically consistant path that is derived from the forward-kinematics of the robot.</p>
+              <p> <i> Forward Kinematics</i> determines where a point on the robot would be after a time interval <b>t</b> given the velocity of the independent actuators on the robot</p>     	  
+          	
+          	<br>
+          	                  
+         <p>Different types of robots using different steering and suspensions</p>  
+         <ol>
+         
+         <li>Differential drive : In this type of vehicle we have two active wheels.The difference between the velocities of the wheels determines the
+                          turning angle. This is the most commonly used kinematic model. Its examples are ER1, pioneer.</li> <br>
+     		
+     		<p align="center"><img style=" width: 175px; height: 154px;" alt="" src="./images/differential.jpg"></p>
+    		<p align="center">Differential drive</p>
+		<li>Synchro drive : In this type of vehicle all the wheels are driven at same speed. All the wheels rotate simultaneously and are always parallel
+                          to each other. Nomad 200 is an example of this type of robot.
+		</li>
+     		
+     		
+     	<p align="center"><img style=" width: 238px; height: 238px;" alt="" src="./images/synchro.jpg"><br></p>
+     	<p align="center">Synchro drive</p>
+     	
+     	<li>Tricycle drive : In this type of vehicle only the front wheel is powered and is steerable. The rear two wheels tag along the front wheel. Example of
+                          this type of robot is mecos tricycle-drive robot.<br></li>
+                          
+        <p align="center"> <img style="  width: 196px; height: 217px;" alt="" src="./images/tricycle.jpg"><br></p>
+           <p align="center"> Tricyle drive</p>
+                          
+        <li>Omnidirectional drive : This type of vehicle can move in all the directions from the starting point. These robots have special wheels which enable them to achieve this. Uranus omni-directional drive robot is an example of this type.</li>
+     	
+     	<p align="center"><img style=" width: 167px; height: 231px;" alt="" src="./images/omni.jpg"><br></p>
+     		<p align="center">Omnidirectional Drive</p>
+     		
+     		
+     		
+     		<p>In this experiment we will see the kinematic motion planning using a technique called Rapidly exploring random tree(RRT).<br></p>
+     		
+     		<p><b>What is RRT?</b></p>
+     		
+     		<p>A Rapidly expanding random tree is a data structure and algorithm which is designed to search efficiently in a given state space. The tree is constructed in such a way that new nodes are added to the existing nodes by connecting them to the nearest node in the tree.<br></p>
+     		
+     		<p align="center"><img style=" width: 432px; height:431px;" alt="" src="./images/RRT.jpg"><br></p>
+     		<p align="center">RRT Example</p>
+     		
+     		
+     		
+     		
+        </div>
+
+
+      </section>
+
+
+
+
+
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" class="icon">
+	 	 <img src="../images/theory.jpg" />
+		</div>
+				
+        <div id="experiment-article-section-2-heading" class="heading">
+          Theory
+        </div>
+
+        <div id="experiment-article-section-2-content" class="content">
+		
+		  <p><b>Kinematics of different robots</b></p>
+		
+			<p>The forward kinematics problem is to find the velocities and the position of the robot given the velocities and the current position of the wheels at a future time instant.</p>
+			
+			<p>We have to follow given any robot to determine the forward kinematics of it.</p>
+			
+			<ol>	
+				<li>Specify system measurements.</li>
+				<li>Determine the point around which the robot is turning. </li>
+				<li>Determine the speed at which the robot is turning to obtain the robot velocity.</li>
+				<li>Integrate to find position.</li>
+			</ol>
+			
+			<p><b>Kinematics of differential drive robot</b></p>
+--			
+			
+			<ol>
+			<li>Specify system measurements. We have to fix all the co-ordinate systems&nbsp; required. We have to know the distance between wheel and the turning angle (the angle between the line joining the robot centre and the ICC and the X-axis on the robot's local frame, shown as theta in the figure). <br></li>
+			
+			  <p align="center"><img style=" width:299px; height: 269px;" alt="" src="./images/coordinate1.jpg"><br></p>
+			
+			<li>
+			Determine the point around which the robot is turning.<br>
+			Find out the instantaneous centre of curvature(ICC) which lies on the intersection of the wheels axles. Each wheel must be travelling around the ICC with the
+            same angular velocity.<br>
+			</li>
+			
+	        <p align="center"><img style=" width:282px; height: 273px;"alt=""src="./images/img2.jpg"><br></p>
+			
+			<li>
+				Determine the speed at which the robot is turning to obtain the robot velocity.<br>
+				It is easy to relate the velocites of the wheel to the velocities of the robot through few elementary equations.<br>
+			</li>
+
+			<p align="center"><img style=" width: 278px;height: 313px;" alt=""src="./images/coordinate3.jpg"></p>	
+			
+			<p>The equations of motion are:</p>			
+			<p align="center"><img style="width: 478px;height:313px;" alt=""src="./images/equation1.jpg"></p>
+			
+			<p>Here</p>
+			
+			<p align="center"><img style=" width: 450px; height: 204px;" alt=""src="./images/equation2.jpg"></p>
+			
+			<li>Integrate to find position<br>
+			Integrate the respective components on the axes with respect to time to get the positions and the angular velocity to get the turning angle.
+			</li>
+			<p align="center"><img style=" width: 259px; height: 118px;" alt=""src="./images/edited_eq.png"><br></p>
+			
+			</ol>
+			
+			<br>
+			<p><b>BasicRRT algorithm</b></p>
+			
+			<p>Let the robot motion be governed by the control law</li>
+			
+				<p align="center"><b>X<sub>k+1</sub>=f(X<sub>k</sub>,U<sub>k</sub>)</b></p>
+			<p>Here X are the state variables and&nbsp; U are the inputs. In our case state variables are the position and the turning angle and the inputs are the wheel
+          velocities. The differential equations for the kinematics can be aproximated to the discrete control law mentioned above.</p>
+          
+          <p>So we can say that in the above case </p>
+
+
+    			 <p align="center"><b>U<sub>k</sub>={V<sub>l</sub>,V<sub>r</sub>}</b></p>
+				<p align="center"><b>X<sub>k</sub>={x,y,θ} </b> and</p>
+				<p align="center"><b>X<sub>k+1</sub>=f(X<sub>k</sub>,U<sub>k</sub>)</b> is&nbsp; nothing but</p>
+				<br>
+				<p align="center"><img style=" width: 259px; height: 118px;" alt="" src="./images/equation3.jpg"></p>
+				<p align="center">(We integrate from t<sub>k</sub> to t<sub>k+1</sub>).</p>
+				
+				<p>RRT starts by taking a random node and finding a node closest to that node in the given tree. It does this based on a certain metric which
+         can be distance. Then it generates a successor node that will be added to the existing tree based on the control law. Then it checks whether the new node is free from any collision with the obstacles. If yes then the tree spreads further else it will terminate.</p>
+					
+				<p> <b>Pseudo-code for RRT</b></p>
+				<br>
+				<p align="center"><img style=" width: 600px; height: 800px;" src="images/rrt1.jpg"> </p>
+				
+				<p><b>Simulation Example</b></p>
+				
+				<p>Here we consider a differential drive robot which has a starting point and has to reach the goal point using the RRT algoritm. The starting and goal points are represented by blue boxes and the obstacles are represented by the black boxes. The green lines represent the evolution of the robot using different wheel velocities at each iteration and the red line represents the final path towards the goal.</p> 
+				
+				
+				 <p align="center"><img style="width: 580px;height:205px;" alt=""src="./images/compare1.jpg"><br></p>
+				 <p align="center">1st Iteration    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     2nd Iteration</p>
+				 <p align="center"><img style="width: 528px;height:186px;" alt=""src="./images/compare2.jpg"><br></p>
+	          <p align="center">3rd Iteration    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     4th Iteration</p>
+			<p>As we can see the tree evolves towards the goal avoiding the obstacles.</p>
+			
+        </div>
+        
+        
+        
+      </section>
+
+
+
+
+
+
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" class="content">
+
+          <p>The objective of the virtual lab is to do motion planning based on RRT. Here we use this method for getting geometrical feasible trajectories which satisfy the kinematics of the robot while avoiding any obstacles that maybe hindering in the evolution of the trajectories. We are using two types of vehicles mentioned above namely differential drive and omnidirectional vehicles to generate the paths.</p> 
+
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+          <p align="center"><b>Differential Drive Robot</b></p>
+          <p align="center"><applet code="VirtualLab.class" archive="RRT_PathModified.jar" height="525" width="800,"> </applet></p>
+          <br>
+          <br>
+          <p align="center"><b>Omni-directional Robot</b></p>
+          <p align="center"><applet code="VirtualLab.class" archive="RRT_Omni.jar" height="525" width="820,"> </applet></p>
+          
+          
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+    		Nothing Here
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+            
+		 <ol>
+			 <li>What does it mean to say that a geometrically feasible path is not kinematically feasible? Explain with an example.</li>
+			 <br>
+			 <li>Which of the following robots is most suited for parallel parking</li>
+			 	<ul>
+				 	 <li>Differential Drive</li>
+					 <li>Ackerman Steer</li>
+					 <li>Omni Drive</li>
+				</ul>
+			 <br>
+		 	<li>For a differential drive robot with left and right wheel velocities, V<sub>L</sub> and V<sub>R</sub>, where V<sub>L</sub> does not equal V<sub>R</sub>, what is the trajectory traced by the center of the robot's wheelbase?</li>
+			 <br>
+			<li>How does evolving the tree towards a randomly selected configuration help the RRT?</li>
+	 </ol>
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+	    <ol>
+	     <li>Select the initial location of the robot by clicking once in the tab.<br></li>
+	     <li>Select the goal position at the second click in the tab.<br></li>
+	     <li>Press "Run RRT" button to run the algorithm.<br></li>
+	     <li>Press "Run RRT" button to run the algorithm.<br></li>
+	     <li>Press "Show map" button to show the path that was constructed.<br></li>
+	     <li>Press “Move” button to move in the path generated according to the drive (differential/omni-directional drive) of the robot towards the goal.<br></li>
+	     <li>“Reset” button can be used always to reset the map being built.</li>
+	    </ol>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+  <ol>
+  	<p><b>Books</b></p>
+  	<li><b>Planning Algorithms</b> - Stephen M.LaValle   , Cambridge University Press</li>
+  	<p><b>Papers</b></p>
+  	<li><b>Randomized Kinodynamic Motion Planning</b> - Stephen M.LaValle, James Kuffner Jr., ICRA-99</li>
+  </ol>
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer">
+<p><center>Feedback: <a href="http://virtual-labs.ac.in/feedback/">http://virtual-labs.ac.in/feedback/</a></center></p>
+<p><center>Sponsored by MHRD: <a href="http://virtual-labs.ac.in/nmeict/" >http://virtual-labs.ac.in/nmeict/</a></center></p>
+<p><center>Licensing Terms: <a href="http://virtual-labs.ac.in/licensing/" >http://virtual-labs.ac.in/licensing/</a></center></p>
+  </footer>
+
+</div>		
+
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.html">Mobile Robotics</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+       	Exploration
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+
+		<p><b>What is exploration?</b></p>
+		
+		<p>Exploration can be defined as the act of moving through an unknown environment while building a map that can be used for subsequent navigation.</p>
+		
+		<p><b>Why exploration?</b></p>
+		
+		<p>Humans explore their environments visually and know the places (like corridors, halls, walls, staircases etc) and also connect these regions for future reference. Robots are majorly used in places where humans cannot reach. Hence they should have the first know the environment like humans, by building map and to move around to do certain tasks. Example: Mars Rovers, Rescue robots etc.</p>
+		
+		<p><b>Previous Algorithms:</b></p>
+		
+		<ol style="padding:10px;">
+			<li>Simulations using “blue print” of floor plans.</li>
+			<li>Wall following algorithms, which fails for large open space.</li>
+		</ol>
+		
+		<p><b>Types of exploration:</b></p>
+		<ol style="padding:10px;">
+			<li> Frontier based exploration</li>
+			<li> Entropy based Exploration</li>
+		</ol>
+		<br>	
+	
+        </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+        <p>Frontier based exploration involves the following stages:</p>
+        <ol style="padding:10px;">
+        	<li>Scanning the environment with 360 sensor sweep.</li>
+        	<li>Detect frontiers.</li>
+        	<li>Cluster the frontiers and get cluster centers (Centroids).</li>
+        	<li>Move towards the closest centroid.</li>
+        	<li>Follow the steps 1 to 4 till all accessible frontiers have been visited.</li>
+        </ol>
+<br><br>
+		
+		<p> <b>Note:</b> It is recommended to go through the Sensor modeling and Mapping experiments before going forward.<br><br> 
+		These steps are explained in detail</p>
+		
+		<p><b>Step 1: Scanning the environment:</b></p>
+		
+		<p>This is done by using laser scan sweeping across 360 degrees.  As described in the Experiments Sensor modeling and Mapping, the grid cells or the pixels are updated with their probability of occupancy values after each scan. With this single scan, complete environment is not explored. Hence the robot has to move to another location and do the scanning again (as given in Mapping). This has to be done continously till the complete arena is explored. But after every scan, the robot has to decide where to move. This decision is made using frontier based approach.</p>
+		
+		
+		<br><br>
+		
+		<p><b>What is frontier?</b></p>
+		
+		<p>Frontier is the boundary between the open space and unexplored region as pointed out in the below figure. The cells/pixels colored red in the below image of the tab "Map built by robot" are the frontiers.</font></p> <br>
+<p>As in some of the experiments of this lab (Sensor Modelling and Mapping), the left tab of the applet represents the real environment with robot in red color and laser as its sensor. Similarly the right tab is the grid map of cells which are updated with the values of probability of occupancy during the experiment. </p>
+	
+		<p align="center"> <img src="./Exp_images/scan.png" style="height:470px; width:800px;"></p>
+		
+		<p><b>Step 2: Detect frontiers:</b></p>
+		<p>pen space is where the probability of occupancy is 0 and the unexplored region is where the probability of occupancy is 0.5. Select the cells/pixels that are of these two classes and adjacent to each other to get the frontiers. There are many heuristic ways to do this selection of frontiers. Here the selection is done based on the characteristics of the adjacent grid cells. Now we have a set of frontiers (regions) towards which the robot can move. Depending on the environment, the number of frontiers will vary. Since this step will be followed many times during the exploration, the frontiers (regions) may not be of a definite shape. Above figure has frontiers in red colored cells/pixels. Check the Mapping experiment which shows how the map builds subsequently after every scan. Hence these frontiers (regions) have to be represented as different clusters to choose the best location of the robot to do the next scan.</p>
+		
+		<p><b>Step 3: Cluster the frontiers:</b></p>
+		
+		<p>Clustering is a mechanism of grouping objects based on their characteristics. Here the objects being clustered are the cells/pixels in the frontiers. There are many clustering mechanisms that can be used. In this experiment a simple distance recursive algorithm is used. One can notice that at the end of the clustering, the number of clusters are not same as it would be inferred by humans visually (which is 3 as observed from the above figure). They are much larger in general. Centroids can be grouped into 3 different categories, like visible, invisible and unreachable. Visible centroids are the ones where the robot can go directly, as the space between them is free from obstacles. Invisible centroids are the ones which have obstacles detected between them and a path planning has to be done in order to reach them. Unreachable centroids are the ones that fall very near to the obstacle and the dimensions of the robot doesn't allow them to reach there. Centroids of the clusters are shown in the above figure with yellow in color. Now the best location for the robot to get more information about the environment quickly is to move towards/to the nearest visible/invisible centroid. The  nearest centroid after a scan is given by dark blue color as in the above figure. When the nearest visible centroid is not available in the map anymore, then the nearest invisible centroid is considered as the next location to reach.</p>
+
+		<p>Moving towards the closest centroid is same as moving towards the closest frontier. This involves path planning from the current location to the closest centroid. Path planning is required because the direct path between the start location and goal location is not always visible. There are many path planning algorithms available to do this task. Some of which is are available in the previous experiments like Grid based navigation and RRT based path planning of this virtual lab. In this experiment this part of path planning is not integrated so as to give the user the insight of how the steps 1-3 take place. So robot moves towards the closest centroid when the user makes the robot to move to the next location. It may be observed in the applet that after exploring most part of the map, the robot might jump from a location to the closest frontier abruptly. This is because the path planning is not integrated in this experiment.</p>
+		
+		<p><b>Step 5: Repetition of steps 1-4:</b></p>		
+		
+		<p align="center"><img src="./Exp_images/move.png" style="height:470px; width:800px;"></p>
+		
+		
+		<p>All the steps are followed until the frontiers become close to zero. This condition can be applied on the number of centroids in turn. In the experiment we have a number close to zero as the threshold to stop the exploration.</p>
+<p>The above figure gives the map after 1-3 steps where the next location to which the robot has to move is given in dark blue color. So if the robot moves to next location and follow all the steps, the exploration would be in a stage as shown in the below figure.</p>
+
+		<p>The frontier based exploration is explained below in a  graphical way with the map layout and the grid map being build.</p>
+		
+		<p> Below is the layout of the map that we are going to explore. Robot is represented by the red circle.</p>
+		
+		
+		<p align="center"><img  src="./Exp_images/image1.png" style="height:400px; width:400px;"></p>
+		
+		
+ <p>Scan 1. Below are the map layout(left) and its corresponding grid map being built (right). At the end of the scan the pixels in the grid map are updated with probability of occupancy as discussed earlier and frontiers are detected. Frontiers are represented by blue green and red boundaries below. Out of these three boundaries frontier in blue is the closest one. Hence the robot moves to the blue frontier.</p>
+		
+	
+	<p align="center"> <img src="./Exp_images/image2.png" style="height:400px; width:400px;"><img src="./Exp_images/image3.png" style="height:400px; width:400px;"></p>
+	
+<p> Scan 2. Below is the map built after scanning at the new location. After this can again the frontiers are detected and are colored by blue, green, red and sky blue colors. The nearest frontier for the robot to move is the one in green color. </p>		
+
+<p align="center"><img src="./Exp_images/image4.png" style="height:400px; width:400px;"><img src="./Exp_images/image5.png" style="height:400px; width:400px;"> </p>
+		
+ <p>Scan 3. Below is the map built after scanning at the new location. We again get the frontiers and choose the closest one which is green in color.</p>
+
+	<p align="center"><img src="./Exp_images/image6.png" style="height:400px; width:400px;"><img src="./Exp_images/image7.png" style="height:400px; width:400px;"></p>
+
+
+	<p>	Scan 4. Below is the map built after scanning at the new location. We again get the frontiers and choose the closest one which is green in color.</p>
+
+	<p align="center"><img src="./Exp_images/image8.png" style="height:400px; width:400px;"><img src="./Exp_images/image9.png" style="height:400px; width:400px;"></p>
+
+  <p>Scan 5. Below is the map built after scanning at the new location. We again get the frontiers and choose the closest one which is green in color.</p>
+	
+
+<p align="center"><img src="./Exp_images/image10.png" style="height:400px; width:400px;"><img src="./Exp_images/image11.png" style="height:400px; width:400px;"></p>	
+		
+	<p>Scan 6. Below is the map built after scanning at the new location. We again get the frontiers and choose the closest one which is blue in color. Observe that this situation tells how important is the path planning to move the robot from this location to the next location which is very far and encounters many obstacles on the way.</p>	
+	
+	<p align="center"><img src="./Exp_images/image12.png"  style="height:400px; width:400px;"><img src="./Exp_images/image13.png" style="height:400px; width:400px;"></p>
+		
+ <p> Scan 7. Below is the map built after scanning at the new location. After this scan we find no frontiers in the grid map to move and explore.</p>	
+	
+	<p align="center"><img src="./Exp_images/image14.png"  style="height:400px; width:400px;"><img src="./Exp_images/image15.png" style="height:400px; width:400px;"></p>
+		
+		
+		<p>Exploration is complete. All unknown frontiers are explored.</p>
+		
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+          <p>
+			The objective of this experiment is to explore a map using frontier based approach. Robot in the applet is an omni directional drive and has the ability to 			move to any point in any direction. Robot is equipped with Laser range finder. 
+          </p> 
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+          <p><center>
+ <applet code="VirtualLab.class" archive="VirtualLab_Exploration.jar" height="800" width="1100,"> </applet></center>
+	        
+            
+          </p>
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+          <p> 
+            Nothing Here.
+          </p> 
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+            
+  <ol style="padding:10px;">
+  <li>Does the frontier based exploration algorithm terminate? Explain.</li>
+  <br>
+  <li>Under what situations does the frontier exploration algorithm summon a path planning algorithm?</li>
+  <br>
+  <li>How do you think humans explore an unknown environment such as an unknown floor in a building? Could you develop a framework or an algorithm that mimics how humans explore? How different or same it is vis-a vis frontier exploration.</li>
+  <br>
+  <li>What is the single most challenge in a frontier exploration algorithm</li>
+  	<ul>
+  	<li>Accuracy of robot pose and map</li>
+  	<li>Accuracy of frontier detection</li>
+  	<li>The ability of the planner to compute paths from current robot pose to the selected frontier.</li>
+  	</ul>
+  <br>
+  <li>The exploration algorithm indeed integrates mapping, localization and planning. Justify.</li>
+  </ol>
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+	    <p>
+	      Procedure for the experiment is as follows.
+	    </p>
+	    <ol style="padding:10px;">
+	    <li>Select the initial location of the robot by clicking on the tab1.</li><br>
+	    <li>Once the initial location is selected, click on Scan button to start the scan at this location.</li><br>
+	    <li>Once 360 scan is done, frontiers are detected (red color pixels) and clustered. The centroids of each cluster is represented by yellow colored pixels in tab2.</li><br>
+	    <li> Blue colored dot is the centroid that is closest to the robot.</li><br>
+	    <li>Press “Move” button to move towards the closest centroid.</li><br>
+	    <li>Again press “Scan” to scan the environment  followed by “Move” button.</li><br>
+	    <li>Continuing this process would end at a point where you no more see the red dot which is when the exploration is complete.</li><br>
+	    <li>“Reset” button can be used always to reset the map being built.</li><br>
+	    <li>Once the "Reset" button is pressed the tab1 is free to place the robot anywhere to start the exploration again.</li><br>
+	    
+	    
+	    </ol>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+ 			 <p><b>Books:</b></p>
+			  <p>Ch.17 Probabilistic Robotics by  Thrun Burgard Fox.</p>
+			  <p><b>Papers:</b></p>
+		  	<ol style="padding:10px;">
+		  	<li>Yamauchi, B. A frontier-based approach for autono-mous exploration. In Proceedings of the 1997 IEEE International Symposium on Computational Intelli-
+gence in Robotics and Automation, (Monterey, CA, July 1997) </li>
+		  	</ol>
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer">
+
+ <p><center>Feedback: <a href="http://virtual-labs.ac.in/feedback/">http://virtual-labs.ac.in/feedback/</a></center></p>
+<p><center>Sponsored by MHRD: <a href="http://virtual-labs.ac.in/nmeict/" >http://virtual-labs.ac.in/nmeict/</a></center></p>
+<p><center>Licensing Terms: <a href="http://virtual-labs.ac.in/licensing/" >http://virtual-labs.ac.in/licensing/</a></center></p>
+
+  </footer>
+
+</div>		
+
+</body>
+</html>

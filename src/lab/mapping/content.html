@@ -1,0 +1,418 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.html">Mobile Robotics</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+        Mapping
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+            <p>
+			In robotic terminology mapping is the process by which a robot moves around its environment, scans it with its sensors and makes representations of the environment. These representations of the environment made by the robot is called the map.
+            </p>
+            
+			<p><b>What are the forms of representing a map?</b></p>
+			
+			<p> With range sensors the following representations are possible:</p>
+			
+			<ul>
+				<li>
+				Raw map of sensor readings:</b> This is a map obtained by simply plotting the range measurements obtained by the sensor with reference to a reference frame. Such a map looks like this
+				</li>
+			<p align="center"> <img src="MT_files/rawmap.jpg" style="height:278px; width:604px;"></p>
+			
+			<li>
+			A grid based map:</b> In a grid based representation each cell in the grid is marked as occupied or unoccupied by an obstacle. Such a representation looks like this
+			</li>
+				
+			<p align="center"><img  src="MT_files/gridmap.jpg" style="height:389px; width:386px;"> </p>
+			
+			
+			<li>
+			A feature based map:</b> In this representation the map is shown in terms of geometric primitives such as line segments and corners.
+			</li>
+				
+			<p align="center"><img  src="MT_files/featuremap.jpg" style="height:264px; width:599px;"></p>
+			
+			<li>Topological map:</b> A topological map is in general a higher level representation. It shows a network of topological features such as rooms, corridors and intersections. A typical topological map looks as follows.</li>
+					
+			<p align="center"><img  src="MT_files/topomap.jpg" style="height:270px; width:695ps;"></p>	
+			</ul>
+		
+			<br>
+			
+			<p><b>Why is mapping important?</b></p>
+			<p>Mapping is pivotal for autonomous navigation as well as for robot localization. Through the representations of the environment a robot can plan collision free paths or it could make use of the map to determine its location in the environment.</p>
+			<br>
+		
+	
+        </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" 
+        class="content">
+          <p> Herein we describe the mapping algorithm which integrates multiple readings into the probabilistic framework that models the sensor noise or sensor errors. For the sake of keeping this article simple but conveying what it needs to convey we skip steps in the derivation but essentially convey it from an algorithmic standpoint, a standpoint we hope would enable the reader to immediately code the algorithm. </p>
+          
+          <p><b>The Mapping Algorithm:</b></p>
+          
+          <p>
+          The mapping algorithm works in the following fashion. The map is divided into a rectangular array of cells and initially all cells have a probability of 0.5, indicating that the cell could be occupied or unoccupied to an equal probability, since in the beginning the robot does not know anything about the environment in which it is. A probability value greater than 0.5 indicates the cell has more chances of being occupied than unoccupied by an obstacle. Similarly a probability of less than 0.5 indicates that the cell has lesser probability of being occupied than unoccupied. In figure1 the initial state of the map is shown with all cells shaded in gray green indicating that the state of the cell is unknown regarding its occupancy or non-occupancy. This corresponds to the probability of 0.5 for each cell. Darker shades of gray green indicate probabilities more than 0.5 or higher occupancy and lighter shades indicate probabilities less than 0.5 or higher non-occupancy.</p> 
+
+		<p align="center"><img style="height:242px; width:239px;" src="MT_files/image01.jpg"> <img style="height:112px; width:405px" src="MT_files/image02.jpg"></p>
+		
+		<p><b>Figure1: Gray green map with 0.5 as the probability and Color shades for different probability values</b></p>
+
+
+		<p>The starting coordinates of the robot are considered to be (0,0) or the origin or any other point (x,y). This and the cells surrounding it which are occupied by the robot are certainly not occupied by an obstacle and  hence they have an occupancy probability of 0 and are depicted in light green. The robot then takes a scan of the environment through its sensors. The scan could be composed of one or multiple range readings, for the sake of simplicity in illustration we consider single reading scans. Since the reading is noisy it is modelled through a probability density function as described in the Virtual Lab for sensor models. One such sonar reading and the probability of the cells which come under the influence of this reading is shown in figure 2.</p>
+
+		<p align="center"><img src="MT_files/resultant_map.jpg"  style="height:441px; width:905px;"></p>
+		<p><b>Figure2: Shows a figure of a ray hitting an obstacle, probability values for the cells which come under the cone updated in terms of color shades.</b></p>
+
+		<p>As seen in figure 2 cells close to the middle ray of the cone and cells near the actual distance reported by the sensor have higher probability values while cells further away from the median ray and those closer to the robot and within the cone have lower probability values. The corresponding color code based depiction of these cells with lighter and darker shades of gray green are shown in the figure 1. </p>
+		
+		<p>Let us denote the occupancy probability of one such cell, i, by p<sub>t</sub><sup>i</sup> and its non occupancy probability by p"<sub>t</sub><sup>i</sup> such that p<sub>t</sub><sup>i</sup>+p"<sub>t</sub><sup>i</sup>=1 . The subscript t refers to the time instant t at which the reading was obtained and superscript i refers to the cell index. In all the following figures, values in the grids/cells only represent p<sub>t</sub><sup>i</sup>.</p>
+		
+		<p align="center"><img style="height:408px; width:830px;" src="MT_files/fig34.jpg" ></p>
+		
+		
+		<p>At time instant t+1 the robot moves to a new location and obtains a scan from this location. The robot location at t+1 the scan and its corresponding probability values is shown in figure 4. Now parts of this scan overlap with the cells updated by the scan at the previous instant. The probability values for these cells need a new update. These are computed as p<sub>t+1</sub><sup>i</sup> = p<sub>t</sub><sup>i</sup>p<sub>t+1</sub><sup>i</sup> and p"<sub>t+1</sub><sup>i</sup> = p"<sub>t</sub><sup>i</sup>p"<sub>t+1</sub><sup>i</sup> after which the values are again normalized so that p<sub>t+1</sub><sup>i</sup>+p"<sub>t+1</sub><sup>i</sup> =1. Thus after normalization the grid values would be updated as per the Figure 5, where the overlapping grids of p<sub>t</sub><sup>i</sup>, p<sub>t+1</sub><sup>i</sup> are with their values marked in red font. </p>
+		
+		<p align="center"><img src="MT_files/fig5.jpg" style="height:404px; width:412px;"></p>
+		
+		<p>The results of these
+operations on the cells are shown in figure 5. The robot thus travels around obtaining newer readings and integrating them into the probability framework. A final occupancy map for an environment such as the one in figure 6 would look like figure 7 for individual scans and would look as the one in figure 8 when overlapping is carried out for scanning at various positions.</p>
+
+		<p align="center"><img src="MT_files/figure67.jpg" style="text-align: center;" height="406" width="1120"> </p>
+		
+		
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+          <p>
+The objective of this virtual lab is to represent the environment of a mobile robot in which it navigates through an occupancy grid map. The environment is discretized into a grid framework composed of cells. As the robot moves around obtaining scans of the environment these scans are mapped into the cells in terms of occupancy or non occupancy values. Repetitive scans of the same location are fused with the previous probability values at those locations through a recursive bayes filter framework.
+          </p> 
+       
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+          <p> <b>Note:</b> Tooltip values shown in "Check what the robot understands!" and "Zoom" tab of the below ` gives the Probability of Occupancy of the corresponding pixel/point </p>
+          
+         <applet code="VirtualLab.class" archive="VirtualLab_Mapping_Stepswithreset.jar" height="650" width="950,"> </applet>
+          
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+          <p> 
+           Nothing Here
+          </p> 
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+       	<ol>     
+             <li>
+             What are we achieving through the probabilistic update process of a cell when it is sited from multiple views in terms of the bigger or broader picture?
+             </li><br>
+              
+			<li>Can you list situations where the probabilistic update of cells in terms of their occupancy or non-occupancy as detailed in this lab may not give results consistent with empirical evidence? </li><br>
+
+
+			<li>One of the tacit assumptions in the mapping process is that the probabilistic update of a cell value is independent of the cells surrounding it? Could you envisage a situation where this assumption may not be correct?</li> <br>
+			
+           <li>For a cell if the prior occupancy probability is 0.6. Current occupancy and non occupancy values are 0.4 and 0.2 what is the eventual occupancy probability value at that cell? Clearly explain the various steps in the derivation.</li><br>
+<li>     Why are we using probabilistic models for mapping ? What could be the reason?</li><br>
+            </ol>
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+			<p><b>Information to use the Experiment:</b></p>
+			
+			<ol>
+				<li>One single map is provided here.</li><br>
+				<li>Sonar sensor is used for the experiment in this mapping experiment</li><br>
+				<li>Error variance that changes the window of the probability density function, is provided in a slider. It is used to adjust the uncertainty in measurements of the given sensor to the user requirements.</li><br>
+				<li>Range varies the distance seen by sensor.</li><br>
+				<li>Divergence varies the angular coverage of the sensors.</li><br>
+				<li>Two tabs are provided namely "Click to set the robot position" and "Check what robot understands!" for distinguishing the environmental view and robots perception respectively.</li>			<br>
+				<li>Application is designed in a way that you can set the robots position by clicking the mouse in a position you wanted, scroll to change the orientation of the robot.</li><br>
+				<li>Once any action is done the robot is activated. But only if you click on "Update P(x,y) No #" the #th scan updates the probability of the grid.</li><br>
+				<li>After every "Update P(x,y) No #" you can see all the overlapping of the scans done till #th time in "Check what robot understands!" tab.</li><br>
+				<li>Now in "Check what robot understands!" you can click on any part of the grid and get the zoomed image populated in the Zoom tab provide in the right bottom. </li><br>
+				<li>The Zoom tab is provided with a 3 other text fields and tool tip facility to show the Resultant Normalized Probability of Occupancy of that particular x,y .</li><br>
+					
+				<li>Reset button is provided to reset the grid map to the probability of unknown status "0.5".</li><br>
+					
+			</ol>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+          <div id="experiment-article-section-8-content" 
+          class="content">
+            <ul>	
+			
+			<p><b>Books</b></p>
+			
+			<li>
+			Probabilistic Robotics by&nbsp; Thrun Burgard Fox.
+			</li>
+
+
+            <li>
+            Breipohl, A.M., Probabilistic Systems Analysis: An Introduction to Probabilistic Models, Decisions, and Applications of Random Processes. New York, John Wiley Sons, 1970.
+            </li>
+            
+            <li>
+             Lee, D., The Map-Building and Exploration Strategies of a Simple Sonar-Equipped Mobile Robot. Cambridge, UK, Cambridge University Press, 1996
+            </li>
+            <br>
+            
+            <p><b>Papers</b></p>
+              <li>
+Burgard, W., Fox, D., Jans, H., Matenar, C., Thrun, S., "Sonar-Based Mapping of Large-Scale Mobile Robot Environments using EM," in Proceedings of the International Conference on Machine Learning, Bled, Slovenia, 1999.
+              </li>
+              <li>
+              Elfes, A., "Sonar-Based Real World Mapping and Navigation,"[2].&nbsp;&nbsp;&nbsp; Elfes, A., "Sonar-Based Real World Mapping and Navigation,
+              </li> 
+            </ul>
+          </div>
+
+        </section>
+
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer" >
+<p><center>Feedback: <a href="http://virtual-labs.ac.in/feedback/">http://virtual-labs.ac.in/feedback/</a></center></p>
+<p><center>Sponsored by MHRD: <a href="http://virtual-labs.ac.in/nmeict/" >http://virtual-labs.ac.in/nmeict/</a></center></p>
+<p><center>Licensing Terms: <a href="http://virtual-labs.ac.in/licensing/" >http://virtual-labs.ac.in/licensing/</a></center></p>
+  </footer>
+
+</div>		
+
+</body>
+</html>
+

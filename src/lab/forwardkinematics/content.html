@@ -1,0 +1,427 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<div id="experiment"> <!-- The Experiment Document Container-->
+
+  <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+  <header id="experiment-header" class="default">
+  
+    <div id="experiment-header-logo" class="logo">
+      <!-- Enclose the logo image of your lab or write it in 
+      text-->
+      <img src="../images/logo.jpg" />
+    </div>
+
+    <div id="experiment-header-heading" class="heading">
+      <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+      <a href="../index.html">Mobile Robotics</a>	
+    </div>
+
+    <!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+
+  </header>
+
+
+  <!-- The lab article is the main content area where all the 
+  experiment content sits-->
+  <article id="experiment-article">
+  
+    <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+     <div id="experiment-article-breadcrumb" class="breadcrumb">
+     </div>
+    
+      <header id="experiment-article-heading" class="heading">
+        <!-- You can add a welcome message or title of the 
+        experiment here -->
+		Forward Kinematics
+        <!-- Add any additional element if required with proper 
+        enclosing-->
+      </header>
+
+      <!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+      <nav id="experiment-article-navigation" class="default">
+        <ul id="experiment-article-navigation-menu">
+          <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          <li> tag as shown below-->
+        </ul>
+      </nav>
+
+      <!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+      <div id="experiment-article-sections">
+
+        <!-- First section of the article-->
+        <section id="experiment-article-section-1">
+          
+          <div id="experiment-article-section-1-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab -->
+	    <img src="../images/introduction.jpg" />
+	  </div>	
+          
+          <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+          <div id="experiment-article-section-1-heading" 
+          class="heading">
+            Introduction
+          </div>
+
+          <!-- Write the section content inside a paragraph 
+          element, You can also include images with <img> tag -->
+          <div id="experiment-article-section-1-content" 
+          class="content">	
+		
+		<p><b>What is Kinematics?</b></p>
+		
+		<p>Kinematics is the science of motion that studies properties of motion without considering the forces that act to cause such motion. The scope of
+kinematics includes position, velocity, acceleration and other higher\ order derivatives of position with respect to time and other variables.</p>
+
+<p><b>What are the popular methods of modelling and analyzing kinematics?</b> </p>
+
+<p>Two of the most popular methods of kinematic modelling and analysis are the forward and inverse kinematic models.</p>
+
+
+<p> <b>What is Forward kinematics?</b> </p>
+<p>In
+the context of this VL experiment forward kinematics addresses the following question: If the various motors on the robot turn so much, where would the robot be or where would a point on the robot be? More formally given the velocities commanded to the motors on the robot the forward kinematic problem computes the position evolution of a reference point on the robot over time as a result of such commanded velocities</p>
+
+<p><b>What is inverse kinematics?</b></p>
+<p>Inverse
+kinematics computes the velocities to be commanded to the motor so that the robot can reach a given location. More formally given an ending configuration of the robot pose the inverse kinematics problem seeks to find a set of wheel/motor velocities and positions that would enable the robot to reach that ending configuration.
+</p>
+
+        </div>
+
+
+      </section>
+
+      <!-- Second section of the article-->
+      <section id="experiment-article-section-2">
+        
+        <div id="experiment-article-section-2-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/theory.jpg" />
+	</div>
+				
+        <!-- The heading for the section can be enclosed in a 
+        div tag. -->
+        <div id="experiment-article-section-2-heading" 
+        class="heading">
+          Theory
+        </div>
+
+        <!-- Write the section content inside a paragraph 
+        element, we can also include images with <img> tag -->
+        <div id="experiment-article-section-2-content" class="content">
+        
+        
+        <p> <b>What is a Differential drive robot?</b> </p>
+		
+		<p align="center"> <img style="height:320px; width:320px;" alt="" src="FK_images/img1.jpg" align="middle"> </p>
+		
+		<p>Differential drive is the common drive mechanism used in mobile robots. It consists of 2 drive wheels mounted on a common axis, and each wheel can independently being driven either forward or back-ward.</p>
+	
+        <p>Since each wheel is independent we can vary the velocity of each wheel, for the robot to perform rolling motion, the robot must rotate about a point that lies along their common left and right wheel axis.</p>
+        
+        <p>This point about which  the robot rotates about is known as the ICC - Instantaneous Center Of Curvature</p>
+        
+        <p align="center"> <img style="height:467px; width:486px;" src="FK_images/img2.jpg"  align="middle"> </p>
+        
+        <p>By varying the velocities of the two wheels, we can vary the trajectories that the robot takes. Because the rate of rotation ω about the ICC must be the same for both wheels, we can write the following equations:</p>
+        
+        
+        <p align="center"> <img  style="height:120px; width:227px;" src="FK_images/img3.jpg" align="middle">
+        
+        <p align="center">where 2d is the distance between the centers of the two wheels, V<sub>R</sub>, V<sub>L</sub> are the right and left wheel velocities along the ground, and R is the signed distance from the ICC to the midpoint between the wheels. At any instance in time we can solve for R and ω:</p>
+        
+        <p align="center"> <img style ="height:105px;  width:396px;" src="FK_images/img4.jpg"  align="middle">
+        </p> 
+        <p align="center"><img
+      style="height:380px;  width:800px;" src="FK_images/img6.jpg"  align="middle"> </p>
+        
+        <p align="center"> There are interesting cases with these kinds of drives. <br> </p>
+        <ol>
+       		 <li>If <b>V<sub>L</sub>=V<sub>R</sub></b>, then we have forward linear motion in a straight line. R becomes infinite, and there is effectively no rotation - ω is zero.</li>
+
+			<li>If <b>V<sub>L</sub>&lt;V<sub>R</sub></b>, then R is finite and we have rotation about the point which is to the left of the left wheel along the axis.</li>
+			<li> If <b>V<sub>L</sub>&gt;V<sub>R</sub></b>, then R is finite and we have rotation about the point which is to the right of the right wheel along the axis.</li>
+			<li>If <b>V<sub>L</sub>=-V<sub>R</sub></b>, then we have rotation about the midpoints ofthe wheels.</li>
+		</ol>
+        
+        <p align="center"> <img style="height:55px; width:323px;" src="FK_images/img5.jpg"  align="middle"> </p>
+        
+        
+		<p> <b> Derive forward kinematics for differential drive?</b></p>        
+        
+        <p>Assume that initial position of the robot is 0,0. When the wheels are given velocities say V<sub>L</sub> and V<sub>R</sub> respectively. The position of the robot after time <b>t</b> would be derived in the following way: </p>
+        
+        <p>The equation of the resultant velocity of the point which is mid point of the axis connecting the wheels is calculated in the previous section.The x and y component of the resultant velocity is given by<br></p>
+        
+        	  <p align="center"> <img style="height: 113px; width:290px;" alt="img7" src="FK_images/img7.jpg"></p>
+        	  
+        	  <p>Using these velocities, the equation to calculate the x,y position of the robot after time t is given by<br></p>
+        	  
+        	  <p>The resultant path would be of a circle and the equation to get the position of the robot after integration is<br></p>
+        	  
+        	  <p align="center"> <img  style="height:417px; width:725px;" alt="img9"  src="FK_images/img9.jpg"></p>
+        	  
+        	  <p>What is Ackerman Steeting?<br></p>
+        	  
+        	  <p>Ackerman steering  is the type of steering found on most automobiles. In this model, the front steering wheels each rotate on seprate arms so as to able to rotate different amounts to point at ICC, which must lie on the line passing through a larger angle axis of the vehicle. In this VL we discuss about the tricycle steering model<br></p>
+        	  
+        	  <p align="center"><img style="height:299px; width: 448px;" alt="img10"  src="FK_images/img10.jpg"></p>
+        	  
+        	  <p>Tricycle
+drive is the common case in the mobile robots. It consists of one steering front wheel and two rear wheels (free wheels). The robot motion is controlled by the steering wheel's velocity <b>V<sub>F</sub></b> and the direction <b>α</b>.</p>
+
+
+			<p>These controls produce a ICC along the axis of the rear wheels as shown below.<br></p>
+			
+			<p align="center"><img  style="height:495px; width:448px;" alt="img11"  src="FK_images/img11.jpg"></p>
+        	  
+        	  
+        	<p>The effect of these controls on the other parameters of the robot like <b>V<sub>L</sub></b>, <b>V<sub>R</sub></b>, <b>ω</b> are shown below.</p>  
+        	
+        	<p align="center"><img  style="height:293px; width:514px;" alt="img12"  src="FK_images/img12.jpg"></p>
+        	
+        	<p>Derive forward kinematics of a tricycle?</p>
+        	
+        	<p>Assume that the initial position of the robot is (0,0). When the steering wheel is given a velocity of <b>V<sub>F</sub></b> along the direction <b>α</b>, then the position of the robot after time t is derived in the following way.</p>
+        	
+        	<p>The equation of the resultant velocity of the point which is mid point of the axis connecting the wheels is calculated in the previous section. The x and y component of the resultant velocity is given by<br></p>  
+        	  
+			<p align="center"><img  style="height:113px; width:290px;" alt="img7"  src="FK_images/img7.jpg">	</p>
+			
+			
+			<p>Using these velocities, the equation to calculate the x,y position of the robot after time t is given by<br></p>
+			
+			<p align="center"><img style="width:315px; height:146px;" alt="img8"  src="FK_images/img8.jpg"></p>
+			
+			
+			<p>The resultant path would be of a circle and the equation to get the position of the robot after integration is</p>
+			
+			<p align="center"><img style="width:294px; height:140px;" alt="img13" src="FK_images/img13.jpg"></p>
+			
+			
+			
+        </div>
+      </section>
+
+
+      <section id="experiment-article-section-3">
+        
+        <div id="experiment-article-section-3-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab. -->
+	  <img src="../images/objective.jpg" />
+	</div>
+     
+        <div id="experiment-article-section-3-heading" 
+        class="heading">
+          Objective
+        </div>
+
+        <div id="experiment-article-section-3-content" 
+        class="content">
+        <p>
+ The objective of this virtual lab is to find kinematic models for a class of mobile robots, namely the differential drive robot, the tri-cycle drive/Ackerman steer robot and the omniwheeled robot.
+       </p>
+        </div>
+
+      </section>
+
+
+      <section id="experiment-article-section-4">
+
+        <div id="experiment-article-section-4-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/simulation.jpg" />
+	</div>
+
+        <div id="experiment-article-section-4-heading" 
+        class="heading">
+          Experiment
+        </div>
+
+        <div id="experiment-article-section-4-content" 
+        class="content">
+        <p>
+<center> <applet code="VirtualLab.class"
+ archive="VL_ForwardKinematics.jar" height="650" width="1000,"> </applet></center></p>
+        </div>
+
+      </section>
+
+      <section id="experiment-article-section-5">
+   
+        <div id="experiment-article-section-5-icon" 
+        class="icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  <img src="../images/manual.jpg" />
+	</div>
+
+        <div id="experiment-article-section-5-heading" 
+        class="heading">
+          Manual
+        </div>
+
+        <div id="experiment-article-section-5-content" 
+        class="content">
+      		<p>Nothing Here.</p>
+      	
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-6">
+      
+          <div id="experiment-article-section-6-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/quizzes.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-6-heading" 
+          class="heading">
+            Quizzes
+          </div>
+
+          <div id="experiment-article-section-6-content" 
+          class="content">
+            
+			<ol style="padding:10px;">
+			<li>Is RRT a forward or an inverse
+kinematic planner? Explain.<br></li>
+			<br>
+
+			<li>
+			For a tri cycle robot let the front wheel velocity be <b>V<sub>f</sub></b>. Let the steering angle of the front wheel be while the angle made by the main body axis (the line joining the front wheel to the midpoint of the line connecting the rear wheels) be . Let the distance between the endpoints of the rear wheels be <b>2d</b> and let <b>b</b> be the distance between the front wheel and the midpoint of the segment connecting the rear wheels. Derive the forward kinematic equations of the robot as <b>(X,Y) = f(V<sub>F</sub>,alpha)</b>.
+			</li>
+			<br>			
+			<li>
+			For the above problem clearly indicate by integrating out the integrals that the path traced by the mid point joining the rear wheels is a circle and what is the radius of that&nbsp; circle?
+			</li>
+			<br>
+			<li>
+			Derive the kinematic equations of the omni directional robot below, with four wheels, placed at ninety degrees between them. The velocity of the left and right wheels is denoted by <b>V<sub>L</sub></b> and <b>V<sub>R</sub></b>, the top and bottom wheels is vt and vb. Given these velocities, what is the velocity of the platform center, <b>V<sub>c</sub></b> and its angular velocity? In other words derive a relation for <b>V<sub>c</sub></b> and angular velocity in terms of the wheel velocities. Assume wheel base and length of the robot.
+			</li>
+						<br>
+			
+			<li>
+			Explain with suitable examples why a geometric plan does not translate into a kinematically consistent plan.
+			</li>
+			
+			
+			
+			</ol>
+
+          </div>
+
+        </section>
+
+        <section id="experiment-article-section-7">
+	  
+          <div id="experiment-article-section-7-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab. -->
+	    <img src="../images/procedure.jpg" />
+	  </div>
+	
+          <div id="experiment-article-section-7-heading" 
+          class="heading">
+	    Procedure
+	  </div>
+	
+          <div id="experiment-article-section-7-content" 
+          class="content">
+          <ol style="padding:10px;">
+	    <li>Type of the robot can be chosen on which you want to do the experiment.<br></li>
+		<li>Click on the tab1 to set your robots initial position, scroll the mouse to set its initial orientation.<br></li>
+	    <li>Once the robot is chosen set its dimensions in the text fields provided.<br></li>
+		<li>Once the robots dimensions are selected, set the control inputs accordingly using the text fields and the drop boxes provided.<br></li>
+		<li>Note that the Velocities are pixels per second, so values below 10 would give a decent output.<br></li>
+		<li>Once the inputs are provided click on the "Calculate" to view the path generated.<br></li>
+			</ol>
+	  </div>
+	
+        </section>
+			
+		
+        <section id="experiment-article-section-8">
+   
+          <div id="experiment-article-section-8-icon" 
+          class="icon">
+	    <!-- Enclose the icon image of your lab.-->
+	    <img src="../images/readings.jpg" />
+	  </div>
+
+          <div id="experiment-article-section-8-heading" 
+          class="heading">
+            Further Readings
+          </div>
+
+      <div id="experiment-article-section-8-content" class="content">
+			<ul style="padding:10px;">
+				<li><b>Introduction to Autonomous Mobile Robots</b> by Rolan Siegwart and Illah R. Nourbakhsh. </li>
+				<li><b>Computational Principles of Mobile Robotics</b> by Gregory Dudek and Michael Jenkin.</li>
+			</ul>
+          </div>
+        </section>
+      </div>
+
+
+    <!-- An article can have a sidebar that contain related 
+    links and additional material (however it is kept optional 
+    at this moment) -->
+    <aside id="lab-article-sidebar" class="default">
+      <!-- put the content that you want to appear in the 
+      sidebar -->	
+    </aside>
+
+
+    <!-- Article footer can display related content and 
+    additional links -->						
+    <footer id="lab-article-footer" class="default">
+      <!-- Put the content that you want to appear here -->
+    </footer>
+
+  </article>
+
+
+  <!-- Links to other labs, about us page can be kept the lab 
+  footer-->
+  <footer id="lab-footer">
+<p><center>Feedback: <a href="http://virtual-labs.ac.in/feedback/">http://virtual-labs.ac.in/feedback/</a></center></p>
+<p><center>Sponsored by MHRD: <a href="http://virtual-labs.ac.in/nmeict/" >http://virtual-labs.ac.in/nmeict/</a></center></p>
+<p><center>Licensing Terms: <a href="http://virtual-labs.ac.in/licensing/" >http://virtual-labs.ac.in/licensing/</a></center></p>
+  </footer>
+
+</div>		
+
+</body>
+</html>
