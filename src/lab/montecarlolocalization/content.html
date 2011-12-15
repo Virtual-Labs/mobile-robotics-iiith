@@ -189,7 +189,7 @@ desired location than any other location. The likelihood of finding the robot de
  the desired position. Thus, intuitively it makes sense to model the
  velocity model noise using a Gaussian, with the maxima of the Gaussian centered at the desired location.</p>
 <br>
- <b>The Algorithm</b>
+ <p><b>The Algorithm</b></p>
  <p>1. <b>&nbsp;&nbsp;&nbsp;&nbsp;
   &#920;(new)=&#920;(old)+&#969;x&#916;t+N(0,σ(&#920;))</b></p>
   <p> The robot first rotates to the desired heading. Some zero-mean Gaussian noise with a standard deviation of σ(&#920;) is thrown in.</p>
@@ -334,7 +334,7 @@ The particles with a higher weight get sampled from more often than a particle w
 <p><b>Information to use the Experiment:</b> </p>
 <ol style="padding:30px;">
  <li> Choose whether you want to solve a Global Localization Problem or a Local one.</li>
- <li> Select the standard deviations in the velocity models (sigmaR and sigmaTheta).</li>
+ <li> Select the standard deviations in the velocity models (sigmaR and sigmaTheta).</li>F
  <li> Select the sensor range (from the slider) and standard deviation for the sensor noise.</li>
  <li> Select a map.</li>
  <li> Click on the map to move your robot there. (See the particles spread).</li>
