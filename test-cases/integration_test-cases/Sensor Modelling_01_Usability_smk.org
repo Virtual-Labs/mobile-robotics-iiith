@@ -1,4 +1,5 @@
-#+Date Of created: 01  Dec 2016
+#+Title: Test Case
+#+Date: 01  Dec 2016
 #+Author: SravanthiB
 
 * Environment
