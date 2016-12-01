@@ -1,0 +1,32 @@
+#Date Of created: 01  Dec 2016
+#Author: SravanthiB
+
+* Environment
+  + OS: Windows 7, Linux
+  + Browsers: Firefox,Chrome
+  + Bandwidth : 100Mbps
+  + Hardware Configuration:8GBRAM,  
+  + Processor:i5,
+  + Plugin Iced Tea.
+* Objective
+  + Experiment should be easily usable.
+* Pre Conditions
+  - Open the url vlabs.ac.in and vlabs home page will be displayed.
+  - Click on IIIT-Hyderabad and a list of labs will be displayed on
+    the screen.  
+  - Select Mobile Robotics, a home page will be displayed and click on
+    experiments link, where a list of experiments will be displayed.
+  - Select “Sensor Modelling” experiment.  
+* Post Conditions
+  + Nil
+* Test Steps
+  + While testing observe whether the features of the experiment are
+    working with ease or not.
+    - Instructions to take the experiment.
+    - Navigation
+    - Look and feel
+* Expected Result
+  + Experiment should be user friendly.
+* Review/Comments
+
+  
