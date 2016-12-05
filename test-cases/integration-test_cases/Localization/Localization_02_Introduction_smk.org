@@ -7,16 +7,17 @@
   +  OS: Windows 7, Linux
   +  Browsers: Firefox,Chrome
   +  Bandwidth : 100Mbps
-  +  Hardware Configuration:8GBRAM ,
+  +  Hardware Configuration:8GBRAM,
   +  Processor:i5
 
 * Objective
 
-  + To view the introduction of "Mapping" experiment
+  + To view the introduction of "Localization" experiment
 
 * Pre Conditions
 
-  + Refer to the first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Mapping/Mapping_01_Usability_smk.org][Mapping_01_Usability_smk.org]]
+  + Refer to the first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Localization/Localization_01_Usability_smk.org][Localization_01_Usability_smk.org
+]]
 
 * Test Steps
 
