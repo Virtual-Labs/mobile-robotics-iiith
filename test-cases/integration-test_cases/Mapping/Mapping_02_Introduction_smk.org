@@ -16,13 +16,13 @@
 
 * Pre Conditions
 
-  + Refer to the first test case [[][]]
+  + Refer to the first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Mapping/Mapping_01_Usability_smk.org][Mapping_01_Usability_smk.org]]
 
 * Test Steps
 
   1. Click on Introduction link.
-  2. Check whether there are any distortions, spelling mistakes and
-     junk characters in the Introduction section.
+  2. Check whether any distortions, spelling mistakes and
+     junk characters are present in the Introduction section.
 
 * Expected Result
 

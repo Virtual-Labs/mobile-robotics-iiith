@@ -1,0 +1,36 @@
+#+Title: Test case
+#+Date: 05 Dec 2016
+#+Author: SravanthiB
+
+* Environment
+
+  +  OS: Windows 7, Linux
+  +  Browsers: Firefox,Chrome
+  +  Bandwidth : 100Mbps
+  +  Hardware Configuration:8GBRAM,
+  +  Processor:i5
+
+* Objective
+
+   + To be able to simulate the "Mapping" experiment
+
+* Pre conditions
+
+  +  Refer to first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Mapping/Mapping_01_Usability_smk.org][Mapping_01_Usability_smk.org
+]]
+
+* Post conditions
+
+  +  Nil
+
+* Test Steps
+
+  +  Click on the "Simulation". 
+  +  Check the functionality of the "cursor" of the mouse.
+
+* Expected result
+
+  + Simulation page should be displayed on the screen.
+  + The user should be able rotate the robot with the help of mouse.
+
+* Review/comments
