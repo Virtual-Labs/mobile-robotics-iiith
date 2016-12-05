@@ -1,0 +1,37 @@
+#+Title: Test cases
+#+Date: 5 Dec 2016
+#+Author: SravanthiB
+
+* Environment
+
+  +  OS: Windows 7, Linux
+  +  Browsers: Firefox,Chrome
+  +  Bandwidth : 100Mbps
+  +  Hardware Configuration:8GBRAM,
+  +  Processor:i5
+
+* Objective
+
+  +  To check the functionality of the "Velocity Modelling" experiment
+
+* Pre conditions
+
+  +  Refer to first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Velocity-Modelling/Velocity-Modelling_0A1_Usability_smk.org][Velocity-Modelling_01_Usability_smk.org
+]]
+
+* Post conditions
+
+  +  Nil
+
+* Test Steps
+
+  +  Click on the "Simulation" link
+  +  Check the functionality of the "Start" button.
+ 
+* Expected result
+
+  +  Simulation page should be displayed on the screen
+  +  The functionality of the start button should be present by
+     getting the output of the experiment. 
+
+* Review/comments

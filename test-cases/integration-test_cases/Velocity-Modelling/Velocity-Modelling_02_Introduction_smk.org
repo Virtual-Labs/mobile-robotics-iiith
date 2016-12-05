@@ -16,7 +16,7 @@
 
 * Pre Conditions
 
-  + Refer to the first test case [[][]]
+  + Refer to the first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Velocity-Modelling/Velocity-Modelling_01_Usability_smk.org][Velocity-Modelling_01_Usability_smk.org]]
 
 * Test Steps
 
