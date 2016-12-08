@@ -1,0 +1,36 @@
+#+Title: Test Case
+#+Date: 08 Dec 2016
+#+Author: SravanthiB
+
+* Environment
+
+  +  OS: Windows 7, Linux
+  +  Browsers: Firefox,Chrome
+  +  Bandwidth : 100Mbps
+  +  Hardware Configuration:8GBRAM,
+  +  Processor:i5
+
+* Objective
+
+  +  To view the Procedure of "Grid based Navigation" experiment
+
+* Pre conditions
+
+  +  Refer to first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Grid-Based-Navigation/Grid-Based-navigation_01_Usability_smk.org][Grid-Based-navigation_01_Usability_smk.org]]
+
+* Post conditions
+
+  +  Nil
+
+* Test Steps
+
+  +  Click on the "Procedure" link
+  +  Check if there are any distortions, Spelling mistakes and junk characters in the Procedure section
+
+* Expected result
+
+  1.  Procedure section should be displayed on the screen.
+  2.  The Procedure to perform the experiment should be present.
+  3.  Content should be present with no distortions, spelling mistakes and Junk characters
+
+* Review/comments
