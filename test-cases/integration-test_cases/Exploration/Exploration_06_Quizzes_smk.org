@@ -1,0 +1,39 @@
+#+Title: Test Case
+#+Date:08 Dec 2016
+#+Author: Sravanthi. B
+
+* Environment
+
+  +  OS: Windows 7, Linux
+  +  Browsers: Firefox,Chrome
+  +  Bandwidth : 100Mbps
+  +  Hardware Configuration:8GBRAM,
+  +  Processor:i5
+
+* Objective
+
+  +  To view the Quiz of "Exploration" experiment
+
+* Pre conditions
+
+  +  Refer to first test case of [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Exploration/Exploration_01_Usability_smk.org][Exploration_01_Usability_smk.org]]
+
+* Post conditions
+
+  +  Nil
+
+* Test Steps
+
+  +  Click on the "Quiz" link
+  +  Check if there are any distortions, Spelling mistakes and junk
+     characters in the Quiz page.
+  +  Check the numbering and alignment of the questions.   
+  
+* Expected result
+
+  +  Quiz page should be displayed on the screen.
+  +  Content should be present with no distortions, Spelling mistakes
+     and Junk characters.
+  +  The numbering of the questions in the quiz section should be in order.
+
+* Review/comments

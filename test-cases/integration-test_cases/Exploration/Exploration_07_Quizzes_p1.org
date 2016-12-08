@@ -1,0 +1,37 @@
+#+Title: Test Case
+#+Date:08 Dec 2016
+#+Author: Sravanthi. B
+
+* Environment
+
+  +  OS: Windows 7, Linux
+  +  Browsers: Firefox,Chrome
+  +  Bandwidth : 100Mbps
+  +  Hardware Configuration:8GBRAM,
+  +  Processor:i5
+
+* Objective
+
+  +  To check the functionality of "Exploration" experiment
+     quiz page.
+
+* Pre conditions
+
+  +  Refer to first test case of [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Exploration/Exploration_01_Usability_smk.org][Exploration_01_Usability_smk.org]]
+
+* Post conditions
+
+  +  Nil
+
+* Test Steps
+
+  +  Click on the "Quiz" link
+  +  Check whether the "Submit" and "Reset" buttons are given or not.
+
+* Expected result
+
+  +  Quiz page should be displayed on the screen.
+  +  The quiz page should be provided with the "Submit" and "Reset"
+     buttons to have the better functionality for the user.
+
+* Review/comments
