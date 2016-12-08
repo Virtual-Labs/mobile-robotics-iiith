@@ -24,13 +24,13 @@
      
 * Test Steps
 
-  +  Click on the "Localization" link.
+  +  Click on the "Grid based Navigation" link.
   +  Check if there are any distortions, spelling mistakes and junk
      characters in the Simulation page.
 
 * Expected result
 
-  + The home page of Localization experiment should be displayed on the screen.
+  + The home page of Grid based Navigation experiment should be displayed on the screen.
   + The Home page should be present with no distortions, spelling mistakes and Junk characters.
 
 * Review/comments
