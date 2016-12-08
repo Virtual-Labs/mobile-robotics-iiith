@@ -1,0 +1,41 @@
+#+Title: Test case
+#+Date: 08 Dec 2016
+#+Author: SravanthiB
+
+* Environment
+
+  +  OS: Windows 7, Linux
+  +  Browsers: Firefox,Chrome
+  +  Bandwidth : 100Mbps
+  +  Hardware Configuration:8GBRAM,
+  +  Processor:i5
+
+* Objective
+
+  +  To check the functionality of the links in Further Readings page
+     of "Forward Kinematics" experiment
+
+* Pre conditions
+
+  +  Refer to first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Forward-Kinematics/Forward-Kinematics_01_Usability_smk.org][Forward-Kinematics_01_Usability_smk.org]]
+
+
+* Post conditions
+
+  +  Nil
+
+* Test Steps
+
+  +  Click on the "Further Reading" link
+  +  Check whether all the reference links given in the further
+     reading page are assigned and navigating to the concerned
+     page or not.
+
+* Expected result
+
+  +  Further Readings section should be displayed on the screen.
+  +  All the reference links given in the further
+     reading page should assigned and navigating to the concerned
+     page .
+
+* Review/comments

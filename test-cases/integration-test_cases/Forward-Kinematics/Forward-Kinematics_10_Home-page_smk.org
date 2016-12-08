@@ -12,11 +12,11 @@
 
 * Objective
 
-   + To be able to simulate the "Grid based Navigation" experiment
+   + To be able to simulate the "Forward Kinematics" experiment
      
 * Pre conditions
 
-  +  Refer to first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Grid-Based-Navigation/Grid-Based-navigation_01_Usability_smk.org][Grid-Based-navigation_01_Usability_smk.org]]
+  +  Refer to first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/Forward-Kinematics/Forward-Kinematics_01_Usability_smk.org][Forward-Kinematics_01_Usability_smk.org]]
 
 * Post conditions
 
@@ -24,13 +24,13 @@
      
 * Test Steps
 
-  +  Click on the "Grid based Navigation" link.
+  +  Click on the "Forward Kinematics" link.
   +  Check if there are any distortions, spelling mistakes and junk
      characters in the Simulation page.
 
 * Expected result
 
-  + The home page of Grid based Navigation experiment should be displayed on the screen.
+  + The home page of Forward Kinematics experiment should be displayed on the screen.
   + The Home page should be present with no distortions, spelling mistakes and Junk characters.
 
 * Review/comments
