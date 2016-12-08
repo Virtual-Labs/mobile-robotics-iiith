@@ -1,0 +1,36 @@
+#+Title: Test case
+#+Date: 08 Dec 2016
+#+Author: SravanthiB
+
+* Environment
+
+  +  OS: Windows 7, Linux
+  +  Browsers: Firefox,Chrome
+  +  Bandwidth : 100Mbps
+  +  Hardware Configuration:8GBRAM,
+  +  Processor:i5
+
+* Objective
+
+   + To be able to simulate the "RRT-based Path Planning" experiment
+     
+* Pre conditions
+
+  +  Refer to first test case [[https://github.com/Virtual-Labs/mobile-robotics-iiith/blob/master/test-cases/integration-test_cases/RRT-based-Path-Planning/RRT-based-Path-Planning_01_Usability_smk.org][RRT-based-Path-Planning_01_Usability_smk.org]]
+
+* Post conditions
+
+  +  Nil
+     
+* Test Steps
+
+  +  Click on the "RRT-based Path Planning" link.
+  +  Check if there are any distortions, spelling mistakes and junk
+     characters in the Simulation page.
+
+* Expected result
+
+  + The home page of RRT-based Path Planning experiment should be displayed on the screen.
+  + The Home page should be present with no distortions, spelling mistakes and Junk characters.
+
+* Review/comments
